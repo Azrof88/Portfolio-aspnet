@@ -8,6 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="sliderMenu.css" />
+    <link rel="stylesheet" type="text/css" href="mainContent.css" />
 </head>
 <body>
     <!-- Toggle Button -->
@@ -32,6 +33,33 @@
         <button class="close-btn" onclick="toggleMenu()">×</button>
     </div>
 
+    <form id="form1" runat="server">
+        <div class="hero-container">
+            <!-- Image Slider -->
+            <div class="slider-container" id="sliderContainer" runat="server">
+                <!-- Slides will be dynamically injected here -->
+            </div>
+            
+            <!-- Content Overlay -->
+            <div class="content-overlay">
+                <div class="content">
+                    <h1>Hi, I'm <span class="highlight">H.M. Azrof</span></h1>
+                    <h2>Aspiring Full-Stack Developer</h2>
+                    <p>I love building modern web applications using HTML, CSS, JavaScript & ASP.NET.</p>
+                    <div class="mainContentButtons">
+                        <a href="#contact" class="btn">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-controls">
+                <button class="prev-btn">❮</button>
+                <div class="dots-container" id="dotsContainer" runat="server"></div>
+                <button class="next-btn">❯</button>
+            </div>
+        </div>
+    </form>
 
 
 

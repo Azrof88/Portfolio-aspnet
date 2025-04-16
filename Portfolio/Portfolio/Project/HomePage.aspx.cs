@@ -11,7 +11,35 @@ namespace Portfolio.Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                // Add your image paths here
+                string[] imagePaths = {
+                "OIP.jpeg",
+                "Azrof.jpg",
+                "OIP_10.jpeg",
+                "OIP_9.jpeg",
+                "OIP_3.jpeg"
+            };
 
+                // Create slides
+                foreach (string imgPath in imagePaths)
+                {
+                    Panel slide = new Panel();
+                    slide.CssClass = "slide";
+                    slide.Style.Add("background-image", $"url({ResolveUrl(imgPath)})");
+                    sliderContainer.Controls.Add(slide);
+                }
+
+                // Create dots
+                for (int i = 0; i < imagePaths.Length; i++)
+                {
+                    Panel dot = new Panel();
+                    dot.CssClass = "dot";
+                    if (i == 0) dot.CssClass += " active";
+                    dotsContainer.Controls.Add(dot);
+                }
+            }
         }
     }
 }
