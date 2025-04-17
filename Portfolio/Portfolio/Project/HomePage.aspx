@@ -26,9 +26,9 @@
         </div>
         <!-- Menu Items -->
         <div class="menu-items">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#project">Project</a>
+            <a href="#form1">Home</a>
+            <a href="#skillsSection">Skills</a>
+            <a href="#projectsCarousal">Project</a>
             <a href="#contacts">Contacts</a>
         </div>
         <!-- Close Button-->
@@ -64,7 +64,7 @@
     </section>
 
 
-    <section class="skills-section">
+    <section class="skills-section" id="skillsSection">
     <h2 class="section-title">Technical Expertise</h2>
     <div class="skills-grid">
         <!-- C# /.NET Card -->
@@ -124,7 +124,7 @@
 </section>
 
     <!-- Projects Section -->
-<section class="projects-carousel">
+<section class="projects-carousel" id="projectsCarousal">
     <div class="filter-controls">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="android">Android</button>
@@ -152,6 +152,9 @@
 
 
 
-    <script src="script.js"></script>
+    <script src="sliderMenu.js"></script>
+    <script src="mainContent.js"></script>
+    
+    <script src="project.js"></script>
     </body>
 </html>
