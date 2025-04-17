@@ -71,6 +71,7 @@
     <Content Include="Project\Azrof.jpg" />
     <Content Include="Project\HomePage.aspx" />
     <Content Include="Project\mainContent.css" />
+    <Content Include="Project\project.css" />
     <Content Include="Project\script.js" />
     <Content Include="Project\skills.css" />
     <Content Include="Project\sliderMenu.css" />

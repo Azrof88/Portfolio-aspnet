@@ -1,0 +1,101 @@
+﻿:root {
+    --card-width: 320px;
+    --card-height: 400px;
+    --accent: #7B2CBF;
+}
+
+.projects-carousel {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #0f0c29, #302b63);
+}
+
+.carousel-container {
+    position: relative;
+    margin: 2rem auto;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card {
+    flex: 0 0 var(--card-width);
+    height: var(--card-height);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: grab;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card:active {
+        cursor: grabbing;
+    }
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+    .nav-btn:hover {
+        transform: scale(1.1);
+    }
+
+/* Horizontal Scrollbar */
+.carousel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 280px;
+    }
+
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+    }
+}

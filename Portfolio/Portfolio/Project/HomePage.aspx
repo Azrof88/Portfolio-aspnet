@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="sliderMenu.css" />
     <link rel="stylesheet" type="text/css" href="mainContent.css" />
     <link rel="stylesheet" type="text/css" href="skills.css" />
+    <link rel="stylesheet" type="text/css" href="project.css" />
 </head>
 <body>
     <!-- Toggle Button -->
@@ -121,6 +122,32 @@
         </a>
     </div>
 </section>
+
+    <!-- Projects Section -->
+<section class="projects-carousel">
+    <div class="filter-controls">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="android">Android</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+            <!-- Project cards will be injected here -->
+        </div>
+    </div>
+
+    <div class="carousel-nav">
+        <button class="nav-btn prev-btn">&lt;</button>
+        <button class="nav-btn next-btn">&gt;</button>
+    </div>
+</section>
+
+
+
+
+
 
 
 
