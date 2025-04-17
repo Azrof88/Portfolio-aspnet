@@ -9,7 +9,7 @@
 
 .skills-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #0f0c29, #302b63);
+    /*background: linear-gradient(135deg, #0f0c29, #302b63);*/
     color: var(--text-color);
 }
 

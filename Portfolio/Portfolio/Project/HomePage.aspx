@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="Portfolio.Project.HomePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" CodeFile="~/Project/HomePage.aspx.cs" Inherits="Portfolio.Project.HomePage" %>
 
 <!DOCTYPE html>
 
@@ -11,8 +11,9 @@
     <link rel="stylesheet" type="text/css" href="mainContent.css" />
     <link rel="stylesheet" type="text/css" href="skills.css" />
     <link rel="stylesheet" type="text/css" href="project.css" />
+    <link rel="stylesheet" type="text/css" href="contacts.css" />
 </head>
-<body>
+<body style="background:linear-gradient(135deg, #0f0c29, #302b63);">
     <!-- Toggle Button -->
     <button class="menu-toggle" onclick="toggleMenu()">&#x2630;</button>
 
@@ -29,7 +30,7 @@
             <a href="#form1">Home</a>
             <a href="#skillsSection">Skills</a>
             <a href="#projectsCarousal">Project</a>
-            <a href="#contacts">Contacts</a>
+            <a href="#contact">Contacts</a>
         </div>
         <!-- Close Button-->
         <button class="close-btn" onclick="toggleMenu()">×</button>
@@ -49,7 +50,7 @@
                     <h2>Aspiring Full-Stack Developer</h2>
                     <p>I love building modern web applications using HTML, CSS, JavaScript & ASP.NET.</p>
                     <div class="mainContentButtons">
-                        <a href="#contact" class="btn">Hire Me</a>
+                        <a href="#contact" class="btn">Contacts Me</a>
                     </div>
                 </div>
             </div>
@@ -143,6 +144,58 @@
         <button class="nav-btn next-btn">&gt;</button>
     </div>
 </section>
+
+    <!-- Contact Section -->
+    <form id="contactForm" runat="server">
+        <section id="contact" class="section contact">
+            <div class="section-header">
+                <h2 class="section-title">Let's Collaborate</h2>
+                <p class="section-subtitle">Response within 24 business hours</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-form">
+                    <div class="form-group">
+                        <asp:TextBox ID="Name" runat="server" CssClass="floating-input" placeholder=" " required="true" />
+                        <label class="floating-label"><i class="fas fa-user-tag"></i> Full Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="Email" runat="server" CssClass="floating-input" TextMode="Email" placeholder=" " required="true" />
+                        <label class="floating-label"><i class="fas fa-at"></i> Professional Email</label>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="Phone" runat="server" CssClass="floating-input" TextMode="Phone" placeholder=" " />
+                        <label class="floating-label"><i class="fas fa-mobile-alt"></i> Contact Number (Optional)</label>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:DropDownList ID="Subject" runat="server" CssClass="floating-select" required="true">
+                            <asp:ListItem Text="" Value="" />
+                            <asp:ListItem Text="Technical Consulting" Value="consulting" />
+                            <asp:ListItem Text="Project Collaboration" Value="collaboration" />
+                            <asp:ListItem Text="Career Opportunity" Value="opportunity" />
+                            <asp:ListItem Text="Other Inquiry" Value="other" />
+                        </asp:DropDownList>
+                        <label class="floating-label"><i class="fas fa-comment-dots"></i> Inquiry Type</label>
+                    </div>
+
+                    <div class="form-group">
+                        <asp:TextBox ID="Message" runat="server" CssClass="floating-textarea" TextMode="MultiLine" Rows="5" placeholder=" " required="true" />
+                        <label class="floating-label"><i class="fas fa-envelope-open-text"></i> Detailed Message</label>
+                    </div>
+
+                    <asp:TextBox ID="Website" runat="server" CssClass="hp-field" placeholder="Leave this blank" />
+
+                    <div class="form-actions">
+                        <asp:Button ID="SubmitBtn" runat="server" Text="Send Message" CssClass="submit-btn" OnClick="SubmitBtn_Click" />
+                        <asp:Label ID="StatusLabel" runat="server" CssClass="form-status" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
 
 
 
