@@ -71,11 +71,8 @@
     <Content Include="Project\Azrof.jpg" />
     <Content Include="Project\HomePage.aspx" />
     <Content Include="Project\mainContent.css" />
-    <Content Include="Project\OIP_10.jpeg" />
-    <Content Include="Project\OIP_3.jpeg" />
-    <Content Include="Project\OIP_9.jpeg" />
-    <Content Include="Project\OIP.jpeg" />
     <Content Include="Project\script.js" />
+    <Content Include="Project\skills.css" />
     <Content Include="Project\sliderMenu.css" />
     <Content Include="Web.config" />
   </ItemGroup>

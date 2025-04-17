@@ -15,11 +15,9 @@ namespace Portfolio.Project
             {
                 // Add your image paths here
                 string[] imagePaths = {
-                "OIP.jpeg",
                 "Azrof.jpg",
-                "OIP_10.jpeg",
-                "OIP_9.jpeg",
-                "OIP_3.jpeg"
+                "Azrof.jpg"
+                
             };
 
                 // Create slides

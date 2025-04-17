@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="sliderMenu.css" />
     <link rel="stylesheet" type="text/css" href="mainContent.css" />
+    <link rel="stylesheet" type="text/css" href="skills.css" />
 </head>
 <body>
     <!-- Toggle Button -->
@@ -33,7 +34,7 @@
         <button class="close-btn" onclick="toggleMenu()">×</button>
     </div>
 
-    <form id="form1" runat="server">
+    <section id="form1" runat="server">
         <div class="hero-container">
             <!-- Image Slider -->
             <div class="slider-container" id="sliderContainer" runat="server">
@@ -59,7 +60,68 @@
                 <button class="next-btn">❯</button>
             </div>
         </div>
-    </form>
+    </section>
+
+
+    <section class="skills-section">
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+        <!-- C# /.NET Card -->
+        <a href="https://github.com/Azrof88/programming-portfolio" class="skill-card" target="_blank" rel="noopener" aria-label="C# Projects">
+            <div class="card-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3>C# / .NET 8</h3>
+            <p>Enterprise-level application development</p>
+        </a>
+
+        <!-- React Card -->
+        <a href="https://github.com/Azrof88/programming-portfolio" class="skill-card" target="_blank" rel="noopener" aria-label="React Projects">
+            <div class="card-icon">
+                <i class="fab fa-react"></i>
+            </div>
+            <h3>React 21</h3>
+            <p>Modern UI/UX implementations</p>
+        </a>
+
+        <!-- SQL Server Card -->
+        <a href="https://github.com/Azrof88/programming-portfolio" class="skill-card" target="_blank" rel="noopener" aria-label="SQL Projects">
+            <div class="card-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h3>SQL Server</h3>
+            <p>Database design & optimization</p>
+        </a>
+
+        <!-- Azure DevOps Card -->
+        <a href="https://github.com/Azrof88/programming-portfolio" class="skill-card" target="_blank" rel="noopener" aria-label="Azure Projects">
+            <div class="card-icon">
+                <i class="fas fa-cloud"></i>
+            </div>
+            <h3>Azure DevOps</h3>
+            <p>Cloud solutions & CI/CD pipelines</p>
+        </a>
+
+        <!-- Android/Desktop Card -->
+        <a href="https://github.com/Azrof88/programming-portfolio" class="skill-card" target="_blank" rel="noopener" aria-label="Android Projects">
+            <div class="card-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Android/Desktop</h3>
+            <p>Cross-platform applications</p>
+        </a>
+
+        <!-- C/C++/Java Card -->
+        <a href="https://github.com/Azrof88/programming-portfolio" class="skill-card" target="_blank" rel="noopener" aria-label="C++ Projects">
+            <div class="card-icon">
+                <i class="fas fa-file-code"></i>
+            </div>
+            <h3>C/C++/Java</h3>
+            <p>Core programming expertise</p>
+        </a>
+    </div>
+</section>
+
 
 
 
