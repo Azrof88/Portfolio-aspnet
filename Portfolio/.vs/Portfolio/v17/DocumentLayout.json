@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Project\\Portfolio-aspnet\\Portfolio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\mainContent.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\skills.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomePage.aspx",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx",
               "RelativeDocumentMoniker": "Portfolio\\Project\\HomePage.aspx",
@@ -59,13 +59,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "contacts.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\contacts.css",
               "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css",
               "RelativeToolTip": "Portfolio\\Project\\contacts.css",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-04-17T21:43:00.876Z",
               "EditorCaption": ""
@@ -80,8 +80,7 @@
               "RelativeToolTip": "Portfolio\\Project\\project.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-17T11:59:06.978Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T11:59:06.978Z"
             },
             {
               "$type": "Document",
@@ -93,8 +92,7 @@
               "RelativeToolTip": "Portfolio\\Project\\skills.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-17T11:40:01.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T11:40:01.306Z"
             },
             {
               "$type": "Document",
@@ -134,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "mainContent.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\mainContent.css",
