@@ -7,11 +7,14 @@
     <title>H.M. Azrof | Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="sliderMenu.css" />
-    <link rel="stylesheet" type="text/css" href="mainContent.css" />
-    <link rel="stylesheet" type="text/css" href="skills.css" />
-    <link rel="stylesheet" type="text/css" href="project.css" />
-    <link rel="stylesheet" type="text/css" href="contacts.css" />
+    <link rel="stylesheet" type="text/css" href="sliderMenu.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="mainContent.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="skills.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="project.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="contacts.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="footer.css?v=${Date.now()}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRN8Fj3yW9KHfC7m+Z7kB6gOVnFdLjwQ6ez+xNREgKlfS6S5Yb+nlBldvtdo7FvY3LZy+ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body style="background:linear-gradient(135deg, #0f0c29, #302b63);">
     <!-- Toggle Button -->
@@ -126,6 +129,7 @@
 
     <!-- Projects Section -->
 <section class="projects-carousel" id="projectsCarousal">
+    <div class="project-section-header">Project Showcase:</div>
     <div class="filter-controls">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="android">Android</button>
@@ -195,6 +199,39 @@
                 </div>
             </div>
         </section>
+
+        <footer class="site-footer">
+    <div class="footer-container">
+        <!-- Social Profiles -->
+        <div class="footer-section">
+            <h4>Connect with Me</h4>
+            <div class="social-icons">
+                <a href="https://github.com/Azrof88" aria-label="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/h-m-azrof-468839253/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:youremail@example.com">hmazrof@gmail.com</a>
+            </p>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2025 H.M. Azrof. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
     </form>
 
 
@@ -205,9 +242,9 @@
 
 
 
-    <script src="sliderMenu.js"></script>
-    <script src="mainContent.js"></script>
+    <script src="sliderMenu.js?v=${Date.now()}"></script>
+    <script src="mainContent.js?v=${Date.now()}"></script>
     
-    <script src="project.js"></script>
+    <script src="project.js?v=${Date.now()}"></script>
     </body>
 </html>
