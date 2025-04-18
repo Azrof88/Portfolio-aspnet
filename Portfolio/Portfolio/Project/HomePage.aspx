@@ -200,36 +200,40 @@
             </div>
         </section>
 
-        <footer class="site-footer">
-    <div class="footer-container">
-        <!-- Social Profiles -->
-        <div class="footer-section">
-            <h4>Connect with Me</h4>
-            <div class="social-icons">
-                <a href="https://github.com/Azrof88" aria-label="GitHub" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/h-m-azrof-468839253/" aria-label="LinkedIn" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-section">
-            <h4>Contact</h4>
-            <p>
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:youremail@example.com">hmazrof@gmail.com</a>
-            </p>
-        </div>
-
-        <!-- Copyright -->
-        <div class="footer-bottom">
-            <p>© 2025 H.M. Azrof. All rights reserved.</p>
-        </div>
+       <footer class="site-footer">
+  <!-- Main Footer Container -->
+  <div class="footer-container">
+    <!-- Left-aligned Section -->
+    <div class="footer-section left-section">
+      <h4>Connect with Me</h4>
+      <div class="social-icons">
+        <a href="https://github.com/Azrof88" aria-label="GitHub" target="_blank" rel="noopener">
+          <img src="github.jpg" alt="GitHub" class="social-icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/h-m-azrof-468839253/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <img src="linkdin.jpg" alt="LinkedIn" class="social-icon" />
+        </a>
+      </div>
     </div>
+
+    <!-- Right-aligned Section -->
+    <div class="footer-section right-section">
+      <h4>Contact</h4>
+      <p class="email-link">
+        <a href="mailto:hmazrof@gmail.com">
+          <span class="icon">✉️</span>
+          hmazrof@gmail.com
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Full-width Copyright Section -->
+  <div class="footer-copyright">
+    <p>© 2025 H.M. Azrof. All rights reserved.</p>
+  </div>
 </footer>
+
 
 
     </form>
