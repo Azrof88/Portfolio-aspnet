@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Portfolio",
+    "\\Portfolio\\App_Data",
     "\\Portfolio\\Project"
   ],
-  "SelectedNode": "\\Portfolio\\Project\\HomePage.aspx.designer.cs",
+  "SelectedNode": "\\Portfolio\\Project\\HomePage.aspx",
   "PreviewInSolutionExplorer": false
 }
