@@ -79,14 +79,19 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         resetCarouselPosition();
     });
 });
+// First, find the "bedroom" - the main container for the project carousel
+const projectCarouselContainer = document.querySelector('.projects-carousel');
+// --- THIS IS THE CORRECTED CODE ---
 
-document.querySelector('.next-btn').addEventListener('click', () => {
-    currentPosition += window.innerWidth * 0.8;
+// Use the container to find the specific next button inside it
+projectCarouselContainer.querySelector('.next-btn').addEventListener('click', () => {
+    currentPosition += window.innerWidth * 0.8; // We will improve this logic in a later step
     smoothScrollTo(currentPosition);
 });
 
-document.querySelector('.prev-btn').addEventListener('click', () => {
-    currentPosition -= window.innerWidth * 0.8;
+// Use the container to find the specific prev button inside it
+projectCarouselContainer.querySelector('.prev-btn').addEventListener('click', () => {
+    currentPosition -= window.innerWidth * 0.8; // We will improve this logic in a later step
     smoothScrollTo(currentPosition);
 });
 

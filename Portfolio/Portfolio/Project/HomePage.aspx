@@ -39,7 +39,7 @@
         <button class="close-btn" onclick="toggleMenu()">×</button>
     </div>
 
-    <section id="form1" runat="server">
+    <section id="form1" >
         <div class="hero-container">
             <!-- Image Slider -->
             <div class="slider-container" id="sliderContainer" runat="server">

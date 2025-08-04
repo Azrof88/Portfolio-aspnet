@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Project\\Portfolio-aspnet\\Portfolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\mainContent.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\sliderMenu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\sliderMenu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\sliderMenu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -23,36 +31,28 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\skills.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\project.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\project.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\mainContent.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\contacts.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\sliderMenu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\sliderMenu.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\project.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\project.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\mainContent.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\HomePage.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\project.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\project.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Portfolio\\Project\\mainContent.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,11 +62,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "project.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\project.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\project.css",
@@ -79,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "HomePage.aspx",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx",
               "RelativeDocumentMoniker": "Portfolio\\Project\\HomePage.aspx",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Web.config",
               "RelativeDocumentMoniker": "Portfolio\\Web.config",
@@ -106,19 +106,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "project.js",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\project.js",
               "RelativeDocumentMoniker": "Portfolio\\Project\\project.js",
               "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\project.js",
               "RelativeToolTip": "Portfolio\\Project\\project.js",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAAwGYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-04T11:56:27.098Z"
+              "WhenOpened": "2025-08-04T11:56:27.098Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "mainContent.js",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.js",
               "RelativeDocumentMoniker": "Portfolio\\Project\\mainContent.js",
@@ -130,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "HomePage.aspx.designer.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.designer.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\HomePage.aspx.designer.cs",
@@ -138,11 +139,12 @@
               "RelativeToolTip": "Portfolio\\Project\\HomePage.aspx.designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAYwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T11:54:21.372Z"
+              "WhenOpened": "2025-08-04T11:54:21.372Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "footer.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\footer.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\footer.css",
@@ -150,11 +152,12 @@
               "RelativeToolTip": "Portfolio\\Project\\footer.css",
               "ViewState": "AgIAAG4AAAAAAAAAAAAQwIUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-18T14:11:21.842Z"
+              "WhenOpened": "2025-04-18T14:11:21.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "contacts.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\contacts.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\contacts.css",
@@ -162,24 +165,25 @@
               "RelativeToolTip": "Portfolio\\Project\\contacts.css",
               "ViewState": "AgIAAFAAAAAAAAAAAAAQwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-18T13:59:36.796Z"
+              "WhenOpened": "2025-04-18T13:59:36.796Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "HomePage.aspx.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\HomePage.aspx.cs",
               "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.cs",
               "RelativeToolTip": "Portfolio\\Project\\HomePage.aspx.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAswDMAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwCsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T13:56:21.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "skills.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\skills.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\skills.css",
@@ -187,11 +191,12 @@
               "RelativeToolTip": "Portfolio\\Project\\skills.css",
               "ViewState": "AgIAAE4AAAAAAAAAAAAQwGUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-17T11:40:01.306Z"
+              "WhenOpened": "2025-04-17T11:40:01.306Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "sliderMenu.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\sliderMenu.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\sliderMenu.css",
@@ -199,11 +204,12 @@
               "RelativeToolTip": "Portfolio\\Project\\sliderMenu.css",
               "ViewState": "AgIAAEcAAAAAAAAAAAAQwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-16T18:23:28.332Z"
+              "WhenOpened": "2025-04-16T18:23:28.332Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "sliderMenu.js",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\sliderMenu.js",
               "RelativeDocumentMoniker": "Portfolio\\Project\\sliderMenu.js",
@@ -211,11 +217,12 @@
               "RelativeToolTip": "Portfolio\\Project\\sliderMenu.js",
               "ViewState": "AgIAABoAAAAAAAAAAAAYwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-04-16T18:22:41.475Z"
+              "WhenOpened": "2025-04-16T18:22:41.475Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "mainContent.css",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\mainContent.css",
               "RelativeDocumentMoniker": "Portfolio\\Project\\mainContent.css",
@@ -223,7 +230,8 @@
               "RelativeToolTip": "Portfolio\\Project\\mainContent.css",
               "ViewState": "AgIAAFAAAAAAAAAAAAAQwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-16T22:03:21.352Z"
+              "WhenOpened": "2025-04-16T22:03:21.352Z",
+              "EditorCaption": ""
             }
           ]
         }
