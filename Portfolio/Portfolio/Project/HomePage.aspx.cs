@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
+using System.Configuration;
 
 namespace Portfolio.Project
 {
@@ -27,15 +28,23 @@ namespace Portfolio.Project
 
             try
             {
+                // --- Read all settings from Web.config ---
+                string smtpUser = ConfigurationManager.AppSettings["SmtpUser"];
+                string smtpPass = ConfigurationManager.AppSettings["SmtpPass"];
+                string smtpHost = ConfigurationManager.AppSettings["SmtpHost"];
+                int smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings["SmtpPort"]);
+                string adminEmail = ConfigurationManager.AppSettings["AdminEmail"];
+
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(fromEmail);
-                mail.To.Add(toEmail);
+                mail.From = new MailAddress(smtpUser); // Send FROM your own email
+                mail.To.Add(adminEmail);               // Send TO your own email
+                mail.ReplyToList.Add(new MailAddress(fromEmail)); // Add the user's email here
                 mail.Subject = subject;
                 mail.Body = body;
                 mail.IsBodyHtml = true;
 
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587); // change to your SMTP
-                smtp.Credentials = new NetworkCredential("hmazrof@gmail.com", "yxik qxvq rton njld");
+                SmtpClient smtp = new SmtpClient(smtpHost, smtpPort); // Use variables from Web.config
+                smtp.Credentials = new NetworkCredential(smtpUser, smtpPass); // Use variables from Web.config
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
