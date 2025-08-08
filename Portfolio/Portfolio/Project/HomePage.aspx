@@ -138,9 +138,10 @@
     </div>
 
     <div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-            <!-- Project cards will be injected here -->
-        </div>
+        <!-- UPDATE THIS LINE -->
+    <div class="carousel-track" id="carouselTrack" runat="server">
+        <!-- This area should be empty. C# will add the project cards here. -->
+    </div>
     </div>
 
     <div class="carousel-nav">

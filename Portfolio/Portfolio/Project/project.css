@@ -133,3 +133,6 @@
         border-color: #6c5dd3;
     }
 
+.project-card.hidden {
+    display: none;
+}
