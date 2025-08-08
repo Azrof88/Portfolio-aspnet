@@ -13,12 +13,17 @@
     <link rel="stylesheet" type="text/css" href="project.css?v=${Date.now()}" />
     <link rel="stylesheet" type="text/css" href="contacts.css?v=${Date.now()}" />
     <link rel="stylesheet" type="text/css" href="footer.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="guestbook.css?v=${Date.now()}" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRN8Fj3yW9KHfC7m+Z7kB6gOVnFdLjwQ6ez+xNREgKlfS6S5Yb+nlBldvtdo7FvY3LZy+ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body style="background:linear-gradient(135deg, #0f0c29, #302b63);">
+    <form id="form2" runat="server">
+
     <!-- Toggle Button -->
-    <button class="menu-toggle" onclick="toggleMenu()">&#x2630;</button>
+    <!-- CORRECTED VERSION -->
+<button class="menu-toggle" onclick="toggleMenu(event)">&#x2630;</button>
 
     <!-- Slider Menu Container -->
     <div class="slider-menu" id="sliderMenu">
@@ -59,11 +64,11 @@
             </div>
 
             <!-- Slider Controls -->
-            <div class="slider-controls">
-                <button class="prev-btn">❮</button>
-                <div class="dots-container" id="dotsContainer" runat="server"></div>
-                <button class="next-btn">❯</button>
-            </div>
+<div class="slider-controls">
+    <button class="prev-btn" type="button">❮</button>
+    <div class="dots-container" id="dotsContainer" runat="server"></div>
+    <button class="next-btn" type="button">❯</button>
+</div>
         </div>
     </section>
 
@@ -150,56 +155,92 @@
     </div>
 </section>
 
-    <!-- Contact Section -->
-    <form id="contactForm" runat="server">
-        <section id="contact" class="section contact">
-            <div class="section-header">
-                <h2 class="section-title">Let's Collaborate</h2>
-                <p class="section-subtitle">Response within 24 business hours</p>
+<!-- =================================================================== -->
+<!-- ============== CONTACT FORM SECTION (UPDATED) =================== -->
+<!-- =================================================================== -->
+<section id="contact" class="section contact">
+    <div class="section-header">
+        <h2 class="section-title">Let's Collaborate</h2>
+        <p class="section-subtitle">Response within 24 business hours</p>
+    </div>
+    <div class="contact-container">
+        <div class="contact-form">
+            <div class="form-group">
+                <!-- ADDED ValidationGroup="Contact" -->
+                <asp:TextBox ID="Name" runat="server" CssClass="floating-input" placeholder=" " ValidationGroup="Contact" />
+                <label class="floating-label"><i class="fas fa-user-tag"></i> Full Name</label>
             </div>
+            <div class="form-group">
+                <!-- ADDED ValidationGroup="Contact" -->
+                <asp:TextBox ID="Email" runat="server" CssClass="floating-input" TextMode="Email" placeholder=" " ValidationGroup="Contact" />
+                <label class="floating-label"><i class="fas fa-at"></i> Professional Email</label>
+            </div>
+            <div class="form-group">
+                <asp:TextBox ID="Phone" runat="server" CssClass="floating-input" TextMode="Phone" placeholder=" " />
+                <label class="floating-label"><i class="fas fa-mobile-alt"></i> Contact Number (Optional)</label>
+            </div>
+            <div class="form-group">
+                <!-- ADDED ValidationGroup="Contact" -->
+                <asp:DropDownList ID="Subject" runat="server" CssClass="floating-select" ValidationGroup="Contact">
+                    <asp:ListItem Text="" Value="" />
+                    <asp:ListItem Text="Technical Consulting" Value="consulting" />
+                    <asp:ListItem Text="Project Collaboration" Value="collaboration" />
+                    <asp:ListItem Text="Career Opportunity" Value="opportunity" />
+                    <asp:ListItem Text="Other Inquiry" Value="other" />
+                </asp:DropDownList>
+                <label class="floating-label"><i class="fas fa-comment-dots"></i> Inquiry Type</label>
+            </div>
+            <div class="form-group">
+                <!-- ADDED ValidationGroup="Contact" -->
+                <asp:TextBox ID="Message" runat="server" CssClass="floating-textarea" TextMode="MultiLine" Rows="5" placeholder=" " ValidationGroup="Contact" />
+                <label class="floating-label"><i class="fas fa-envelope-open-text"></i> Detailed Message</label>
+            </div>
+            <asp:TextBox ID="Website" runat="server" CssClass="hp-field" placeholder="Leave this blank" />
+            <div class="form-actions">
+                <!-- ADDED ValidationGroup="Contact" -->
+                <asp:Button ID="SubmitBtn" runat="server" Text="Send Message" CssClass="submit-btn" OnClick="SubmitBtn_Click" ValidationGroup="Contact" />
+                <asp:Label ID="StatusLabel" runat="server" CssClass="form-status" />
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="contact-container">
-                <div class="contact-form">
-                    <div class="form-group">
-                        <asp:TextBox ID="Name" runat="server" CssClass="floating-input" placeholder=" " required="true" />
-                        <label class="floating-label"><i class="fas fa-user-tag"></i> Full Name</label>
-                    </div>
+<!-- =================================================================== -->
+<!-- ============== GUESTBOOK SECTION (UPDATED) ====================== -->
+<!-- =================================================================== -->
+<section id="guestbook" class="guestbook-section">
+    <div class="guestbook-header">
+        <h2 class="section-header">Guestbook</h2>
+        <p class="section-subtitle">Leave a short message!</p>
+    </div>
 
-                    <div class="form-group">
-                        <asp:TextBox ID="Email" runat="server" CssClass="floating-input" TextMode="Email" placeholder=" " required="true" />
-                        <label class="floating-label"><i class="fas fa-at"></i> Professional Email</label>
-                    </div>
+    <!-- This new container will create the side-by-side layout -->
+    <div class="guestbook-content-wrapper">
 
-                    <div class="form-group">
-                        <asp:TextBox ID="Phone" runat="server" CssClass="floating-input" TextMode="Phone" placeholder=" " />
-                        <label class="floating-label"><i class="fas fa-mobile-alt"></i> Contact Number (Optional)</label>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:DropDownList ID="Subject" runat="server" CssClass="floating-select" required="true">
-                            <asp:ListItem Text="" Value="" />
-                            <asp:ListItem Text="Technical Consulting" Value="consulting" />
-                            <asp:ListItem Text="Project Collaboration" Value="collaboration" />
-                            <asp:ListItem Text="Career Opportunity" Value="opportunity" />
-                            <asp:ListItem Text="Other Inquiry" Value="other" />
-                        </asp:DropDownList>
-                        <label class="floating-label"><i class="fas fa-comment-dots"></i> Inquiry Type</label>
-                    </div>
-
-                    <div class="form-group">
-                        <asp:TextBox ID="Message" runat="server" CssClass="floating-textarea" TextMode="MultiLine" Rows="5" placeholder=" " required="true" />
-                        <label class="floating-label"><i class="fas fa-envelope-open-text"></i> Detailed Message</label>
-                    </div>
-
-                    <asp:TextBox ID="Website" runat="server" CssClass="hp-field" placeholder="Leave this blank" />
-
-                    <div class="form-actions">
-                        <asp:Button ID="SubmitBtn" runat="server" Text="Send Message" CssClass="submit-btn" OnClick="SubmitBtn_Click" />
-                        <asp:Label ID="StatusLabel" runat="server" CssClass="form-status" />
-                    </div>
+        <!-- Column 1: The Form -->
+        <div class="comment-form-container">
+            <div class="comment-form">
+                <div class="form-group">
+                    <asp:TextBox ID="txtGuestName" runat="server" placeholder="Your Name" CssClass="guest-input" ValidationGroup="Guestbook"></asp:TextBox>
                 </div>
+                <div class="form-group">
+                    <asp:TextBox ID="txtGuestMessage" runat="server" placeholder="Your message..." TextMode="MultiLine" Rows="5" CssClass="guest-textarea" ValidationGroup="Guestbook"></asp:TextBox>
+                </div>
+                <asp:Button ID="btnSubmitComment" runat="server" Text="Sign Guestbook" OnClick="btnSubmitComment_Click" CssClass="guest-btn" ValidationGroup="Guestbook" />
+                <asp:Label ID="lblCommentStatus" runat="server" CssClass="comment-status"></asp:Label>
             </div>
-        </section>
+        </div>
+
+        <!-- Column 2: The Comments Display -->
+        <div class="comments-display-container">
+            <div class="comments-display">
+                <asp:Literal ID="litComments" runat="server"></asp:Literal>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
        <footer class="site-footer">
   <!-- Main Footer Container -->

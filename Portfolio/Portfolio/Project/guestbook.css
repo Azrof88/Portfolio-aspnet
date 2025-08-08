@@ -1,0 +1,129 @@
+﻿/* --- Guestbook Section Styling (New Version) --- */
+.guestbook-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0f0c29, #302b63); /* Matches your site's theme */
+}
+
+.guestbook-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .guestbook-header .section-header {
+        font-size: 32px;
+        color: #fefefe;
+        margin-bottom: 10px;
+    }
+
+    .guestbook-header .section-subtitle {
+        font-size: 16px;
+        color: #b0a8d8;
+    }
+
+/* This is the main container for the side-by-side layout */
+.guestbook-content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows it to stack on small screens */
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Column 1: The Form */
+.comment-form-container {
+    flex: 1; /* Takes up 1 part of the available space */
+    min-width: 300px;
+}
+
+/* Column 2: The Comments Display */
+.comments-display-container {
+    flex: 1.5; /* Takes up 1.5 parts of the space, making it wider */
+    min-width: 300px;
+}
+
+/* Styling for the form inputs to match your theme */
+.guest-input,
+.guest-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #4a3d8a;
+    background-color: #2c2358;
+    color: #f0eaff;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.guest-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #7B2CBF; /* Purple accent color */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+    .guest-btn:hover {
+        background-color: #9d4edd;
+    }
+
+.comment-status {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #34c759; /* Green for success */
+}
+
+/* --- SCROLLABLE COMMENT BOX STYLING --- */
+.comments-display {
+    background: rgba(15, 12, 41, 0.7); /* Dark semi-transparent background */
+    border-radius: 15px;
+    padding: 10px 20px;
+    height: 350px; /* Fixed height for the container */
+    overflow-y: auto; /* This is the magic part! It adds a scrollbar ONLY when needed. */
+}
+
+/* Styling for each individual comment */
+.comment-item {
+    border-bottom: 1px solid #302b63;
+    padding: 15px 5px;
+}
+
+    .comment-item:last-child {
+        border-bottom: none; /* Remove border from the last comment */
+    }
+
+.comment-author {
+    font-weight: bold;
+    color: #f0eaff;
+    margin: 0 0 5px 0;
+}
+
+.comment-text {
+    color: #d1caff;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Custom Scrollbar Styling (like your image) */
+.comments-display::-webkit-scrollbar {
+    width: 8px;
+}
+
+.comments-display::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.comments-display::-webkit-scrollbar-thumb {
+    background: #7B2CBF; /* Purple accent color */
+    border-radius: 4px;
+}
+
+    .comments-display::-webkit-scrollbar-thumb:hover {
+        background: #9d4edd;
+    }

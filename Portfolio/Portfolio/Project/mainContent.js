@@ -4,7 +4,10 @@ class ImageSlider {
         this.dots = document.querySelectorAll('.dot');
         this.currentIndex = 0;
         this.interval = null;
-        this.init();
+        // Safety check: only run init if slides exist
+        if (this.slides.length > 0) {
+            this.init();
+        }
     }
 
     init() {
@@ -14,12 +17,23 @@ class ImageSlider {
         // Auto-advance every 5 seconds
         this.startAutoSlide();
 
-        // Event listeners
-        document.querySelector('.prev-btn').addEventListener('click', () => this.prevSlide());
-        document.querySelector('.next-btn').addEventListener('click', () => this.nextSlide());
+        // --- UPDATED EVENT LISTENERS ---
+        // Add the 'event' parameter and preventDefault() to stop page reloads
+        document.querySelector('.prev-btn').addEventListener('click', (event) => {
+            event.preventDefault();
+            this.prevSlide();
+        });
+        document.querySelector('.next-btn').addEventListener('click', (event) => {
+            event.preventDefault();
+            this.nextSlide();
+        });
+        // --- END OF UPDATES ---
 
         this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.goToSlide(index));
+            dot.addEventListener('click', (event) => {
+                event.preventDefault();
+                this.goToSlide(index);
+            });
         });
 
         // Pause on hover
