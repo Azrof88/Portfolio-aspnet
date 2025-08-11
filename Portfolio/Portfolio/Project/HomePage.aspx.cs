@@ -1,48 +1,40 @@
-﻿using System;
+﻿using Newtonsoft.Json; // REQUIRED: Add this using statement for JSON functionality
+using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient; // Required for SQL database access
-using System.IO;             // Required for File I/O
+using System.Data.SqlClient;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
-using System.Text;           // Required for StringBuilder
+using System.Security.Policy;
+using System.Text;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Xml.Linq;
 
 namespace Portfolio.Project
 {
-    // This class represents a single project from our database
-    public class Project
-    {
-        public string Title { get; set; }
-        public string Category { get; set; }
-        public string ImageURL { get; set; }
-        public string Description { get; set; }
-        public string GitHubURL { get; set; }
-        public string[] TechStack { get; set; }
-    }
+    // Represents a single project from the database
+
+
+    // Represents a single skill from the database
+
 
     public partial class HomePage : System.Web.UI.Page
     {
-        // Define the path for our guestbook text file
         private string guestbookFilePath;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Set the file path every time the page loads.
             guestbookFilePath = Server.MapPath("~/App_Data/guestbook.txt");
 
-            // --- THIS LOGIC NOW RUNS ON EVERY PAGE LOAD, NOT JUST THE FIRST ONE ---
-            // This will prevent your content from disappearing after a button click.
+            // --- THIS LOGIC RUNS ON EVERY PAGE LOAD TO PREVENT CONTENT DISAPPEARING ---
 
             // --- Slider logic ---
             string[] imagePaths = { "Azrof.jpg", "Azrof.jpg" };
-
-            // IMPORTANT: Clear existing controls to prevent duplicates on postback
             sliderContainer.Controls.Clear();
             dotsContainer.Controls.Clear();
-
             foreach (string imgPath in imagePaths)
             {
                 Panel slide = new Panel();
@@ -54,44 +46,137 @@ namespace Portfolio.Project
             {
                 Panel dot = new Panel();
                 dot.CssClass = "dot";
-                // Only set the first dot as active on the initial page load
-                if (i == 0 && !IsPostBack)
-                {
-                    dot.CssClass += " active";
-                }
+                if (i == 0 && !IsPostBack) dot.CssClass += " active";
                 dotsContainer.Controls.Add(dot);
             }
 
-            // --- Load projects from the database ---
+            // --- Load all dynamic content ---
             LoadProjectsFromDatabase();
-
-            // --- Load existing comments from the guestbook file ---
             LoadComments();
+
+            if (!IsPostBack)
+            {
+                // This runs only on the first page load to populate the database
+                PopulateSkillsIfEmpty();
+            }
+            LoadSkillsFromDatabase();
         }
 
+        // --- SKILLS METHODS ---
+        private void PopulateSkillsIfEmpty()
+        {
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand countCmd = new SqlCommand("SELECT COUNT(*) FROM Skills", con);
+                    int count = (int)countCmd.ExecuteScalar();
 
+                    if (count == 0)
+                    {
+                        string jsonFilePath = Server.MapPath("~/App_Data/skills.json");
+                        string jsonData = File.ReadAllText(jsonFilePath);
+                        List<Skill> skills = JsonConvert.DeserializeObject<List<Skill>>(jsonData);
+
+                        foreach (var skill in skills)
+                        {
+                            string insertQuery = "INSERT INTO Skills (SkillName, Description, IconClass, Proficiency, GitHubURL) VALUES (@SkillName, @Description, @IconClass, @Proficiency, @GitHubURL)";
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, con))
+                            {
+                                insertCmd.Parameters.AddWithValue("@SkillName", skill.SkillName);
+                                insertCmd.Parameters.AddWithValue("@Description", skill.Description);
+                                insertCmd.Parameters.AddWithValue("@IconClass", skill.IconClass);
+                                insertCmd.Parameters.AddWithValue("@Proficiency", skill.Proficiency);
+                                insertCmd.Parameters.AddWithValue("@GitHubURL", skill.GitHubURL);
+                                insertCmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error populating skills from JSON: " + ex.Message);
+                }
+            }
+        }
+
+        private void LoadSkillsFromDatabase()
+        {
+            List<Skill> skills = new List<Skill>();
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT SkillName, Description, IconClass, Proficiency, GitHubURL FROM Skills";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        con.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                skills.Add(new Skill
+                                {
+                                    SkillName = reader["SkillName"].ToString(),
+                                    Description = reader["Description"].ToString(),
+                                    IconClass = reader["IconClass"].ToString(),
+                                    Proficiency = (int)reader["Proficiency"],
+                                    GitHubURL = reader["GitHubURL"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Skills DB Error: " + ex.Message);
+                skillsGrid.Controls.Add(new LiteralControl("<p style='color:red;'>Could not load skills.</p>"));
+                return;
+            }
+
+            StringBuilder skillsHtml = new StringBuilder();
+            foreach (var skill in skills)
+            {
+                skillsHtml.AppendFormat(@"
+        <a href='{0}' class='skill-card' target='_blank' rel='noopener'>
+            <div class='card-icon'><i class='{1}'></i></div>
+            <h3>{2}</h3>
+            <p>{3}</p>
+            
+            <!-- THIS IS THE NEW LINE FOR THE PERCENTAGE -->
+            <p class='proficiency-text'>{4}% Proficiency</p> 
+            
+            <div class='progress-bar-container'>
+                <div class='progress-bar-fill' style='width: {4}%;'></div>
+            </div>
+        </a>",
+                    skill.GitHubURL, skill.IconClass, skill.SkillName, skill.Description, skill.Proficiency);
+            }
+            skillsGrid.Controls.Clear();
+            skillsGrid.Controls.Add(new LiteralControl(skillsHtml.ToString()));
+        }
+
+        // --- PROJECTS METHODS ---
         private void LoadProjectsFromDatabase()
         {
             List<Project> projects = new List<Project>();
-            // Reads the connection string from Web.config
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
-
-            // Use a try-catch block for robust database operations
             try
             {
-                // The 'using' statement ensures the connection is properly closed
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = "SELECT Title, Category, ImageURL, Description, GitHubURL, TechStack FROM Projects";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        con.Open(); // Open the connection to the database
+                        con.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Loop through each row returned by the query
                             while (reader.Read())
                             {
-                                // Create a new Project object and fill it with data from the row
                                 projects.Add(new Project
                                 {
                                     Title = reader["Title"].ToString(),
@@ -99,7 +184,6 @@ namespace Portfolio.Project
                                     ImageURL = reader["ImageURL"].ToString(),
                                     Description = reader["Description"].ToString(),
                                     GitHubURL = reader["GitHubURL"].ToString(),
-                                    // Split the comma-separated string from the DB into an array
                                     TechStack = reader["TechStack"].ToString().Split(',')
                                 });
                             }
@@ -109,19 +193,14 @@ namespace Portfolio.Project
             }
             catch (Exception ex)
             {
-                // Log any database errors to the debug console for troubleshooting
-                System.Diagnostics.Debug.WriteLine("Database Error: " + ex.Message);
-                // Display a friendly error message to the user on the page
+                System.Diagnostics.Debug.WriteLine("Projects DB Error: " + ex.Message);
                 carouselTrack.Controls.Add(new LiteralControl("<p style='color:red; text-align:center;'>Could not load projects at this time.</p>"));
                 return;
             }
 
-            // Use StringBuilder for efficient string concatenation
             StringBuilder projectHtml = new StringBuilder();
-            // Loop through the list of projects we fetched from the database
             foreach (var project in projects)
             {
-                // Build the HTML for one project card
                 projectHtml.AppendFormat(@"
                     <div class='project-card' data-category='{0}'>
                         <img src='{1}' alt='{2}' class='project-image'>
@@ -130,7 +209,6 @@ namespace Portfolio.Project
                         <div class='tech-stack'>",
                     project.Category, project.ImageURL, project.Title, project.Description);
 
-                // Add the tech stack spans
                 foreach (var tech in project.TechStack)
                 {
                     projectHtml.AppendFormat("<span>{0}</span>", tech.Trim());
@@ -143,33 +221,26 @@ namespace Portfolio.Project
                         </a>
                     </div>", project.GitHubURL);
             }
-
-            // Add the complete block of generated HTML to the page
+            carouselTrack.Controls.Clear();
             carouselTrack.Controls.Add(new LiteralControl(projectHtml.ToString()));
         }
 
-        // --- NEW GUESTBOOK METHODS START HERE ---
-
+        // --- GUESTBOOK METHODS ---
         private void LoadComments()
         {
-            // This method READS from the text file.
             StringBuilder commentsHtml = new StringBuilder();
             try
             {
-                // Check if the file exists before trying to read it.
                 if (File.Exists(guestbookFilePath))
                 {
-                    // Read all lines from the file into an array.
                     string[] comments = File.ReadAllLines(guestbookFilePath);
-                    // Loop through the lines in reverse to show the newest comments first.
                     for (int i = comments.Length - 1; i >= 0; i--)
                     {
                         string line = comments[i];
-                        // We expect the format to be "Name|Message"
                         string[] parts = line.Split(new[] { '|' }, 2);
                         if (parts.Length == 2)
                         {
-                            string name = Server.HtmlEncode(parts[0]); // Encode to prevent HTML injection
+                            string name = Server.HtmlEncode(parts[0]);
                             string message = Server.HtmlEncode(parts[1]);
 
                             commentsHtml.Append("<div class='comment-item'>");
@@ -184,14 +255,11 @@ namespace Portfolio.Project
             {
                 System.Diagnostics.Debug.WriteLine("Error loading comments: " + ex.Message);
             }
-
-            // Display the generated HTML in our literal control
             litComments.Text = commentsHtml.ToString();
         }
 
         protected void btnSubmitComment_Click(object sender, EventArgs e)
         {
-            // This method WRITES to the text file.
             try
             {
                 string name = txtGuestName.Text.Trim();
@@ -199,20 +267,11 @@ namespace Portfolio.Project
 
                 if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(message))
                 {
-                    // Format the entry with a pipe character as a separator.
-                    // Replace newlines in the message to store it properly.
                     string entry = $"{name}|{message.Replace("\n", "<br>")}\n";
-
-                    // Use AppendAllText to add the new comment to the end of the file.
-                    // This will create the file if it doesn't exist.
                     File.AppendAllText(guestbookFilePath, entry);
-
-                    // Clear the form and show a success message
                     txtGuestName.Text = "";
                     txtGuestMessage.Text = "";
                     lblCommentStatus.Text = "Thank you for your comment!";
-
-                    // Reload the comments to show the new one immediately
                     LoadComments();
                 }
             }
@@ -223,33 +282,27 @@ namespace Portfolio.Project
             }
         }
 
-        // --- NEW GUESTBOOK METHODS END HERE ---
-
+        // --- CONTACT FORM SUBMISSION ---
         protected void SubmitBtn_Click(object sender, EventArgs e)
         {
-            // --- Spam check is preserved ---
             if (!string.IsNullOrEmpty(Website.Text)) return;
 
-            // --- NEW: Add server-side validation to check for empty required fields ---
             if (string.IsNullOrWhiteSpace(Name.Text) ||
                 string.IsNullOrWhiteSpace(Email.Text) ||
                 string.IsNullOrWhiteSpace(Message.Text))
             {
-                // If any required field is empty, show a specific error and stop.
                 StatusLabel.Text = "Please fill out all required fields.";
-                StatusLabel.CssClass = "form-status error"; // Make sure your CSS has a style for this
-                return; // Stop the function from proceeding further
+                StatusLabel.CssClass = "form-status error";
+                return;
             }
-            // --- End of new validation ---
 
-            // The rest of your email logic will only run if the validation passes.
             string fromEmail = Email.Text.Trim();
             string subject = $"New Inquiry - {Subject.SelectedValue}";
             string body = $@"
-        <strong>Name:</strong> {Name.Text}<br/>
-        <strong>Email:</strong> {fromEmail}<br/>
-        <strong>Phone:</strong> {Phone.Text}<br/>
-        <strong>Message:</strong><br/>{Message.Text.Replace("\n", "<br/>")}";
+                <strong>Name:</strong> {Name.Text}<br/>
+                <strong>Email:</strong> {fromEmail}<br/>
+                <strong>Phone:</strong> {Phone.Text}<br/>
+                <strong>Message:</strong><br/>{Message.Text.Replace("\n", "<br/>")}";
 
             try
             {
@@ -273,23 +326,20 @@ namespace Portfolio.Project
                 smtp.Send(mail);
 
                 StatusLabel.Text = "Message sent successfully!";
-                StatusLabel.CssClass = "form-status success"; // Use '=' instead of '+=' to reset classes
-                                                              // --- ADD THIS NEW BLOCK OF CODE ---
-                                                              // This will clear the form fields after a successful submission.
+                StatusLabel.CssClass = "form-status success";
+
                 Name.Text = "";
                 Email.Text = "";
                 Phone.Text = "";
                 Message.Text = "";
-                Subject.SelectedIndex = 0; // Resets the dropdown to the first item
-                                           // --- END OF NEW CODE ---
+                Subject.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
                 StatusLabel.Text = "Something went wrong. Please try again.";
-                StatusLabel.CssClass = "form-status error"; // Use '=' instead of '+=' to reset classes
+                StatusLabel.CssClass = "form-status error";
                 System.Diagnostics.Debug.WriteLine("Email Error: " + ex.Message);
             }
         }
-
     }
 }

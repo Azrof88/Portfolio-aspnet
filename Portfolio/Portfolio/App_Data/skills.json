@@ -1,0 +1,44 @@
+﻿[
+  {
+    "SkillName": "C# / .NET 8",
+    "Description": "Enterprise-level application development",
+    "IconClass": "fas fa-code",
+    "Proficiency": 90,
+    "GitHubURL": "https://github.com/Azrof88/programming-portfolio"
+  },
+  {
+    "SkillName": "React 21",
+    "Description": "Modern UI/UX implementations",
+    "IconClass": "fab fa-react",
+    "Proficiency": 75,
+    "GitHubURL": "https://github.com/Azrof88/programming-portfolio"
+  },
+  {
+    "SkillName": "SQL Server",
+    "Description": "Database design & optimization",
+    "IconClass": "fas fa-database",
+    "Proficiency": 85,
+    "GitHubURL": "https://github.com/Azrof88/programming-portfolio"
+  },
+  {
+    "SkillName": "Azure DevOps",
+    "Description": "Cloud solutions & CI/CD pipelines",
+    "IconClass": "fas fa-cloud",
+    "Proficiency": 70,
+    "GitHubURL": "https://github.com/Azrof88/programming-portfolio"
+  },
+  {
+    "SkillName": "Android/Desktop",
+    "Description": "Cross-platform applications",
+    "IconClass": "fas fa-mobile-alt",
+    "Proficiency": 80,
+    "GitHubURL": "https://github.com/Azrof88/programming-portfolio"
+  },
+  {
+    "SkillName": "C/C++/Java",
+    "Description": "Core programming expertise",
+    "IconClass": "fas fa-file-code",
+    "Proficiency": 88,
+    "GitHubURL": "https://github.com/Azrof88/programming-portfolio"
+  }
+]

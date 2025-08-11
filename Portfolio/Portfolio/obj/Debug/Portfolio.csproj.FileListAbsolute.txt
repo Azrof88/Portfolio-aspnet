@@ -57,3 +57,5 @@ D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.CoreC
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.Up2Date
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.dll
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.pdb
+D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Newtonsoft.Json.dll
+D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Newtonsoft.Json.xml
