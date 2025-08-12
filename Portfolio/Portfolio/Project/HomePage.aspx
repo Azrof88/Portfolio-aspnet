@@ -14,8 +14,9 @@
     <link rel="stylesheet" type="text/css" href="contacts.css?v=${Date.now()}" />
     <link rel="stylesheet" type="text/css" href="footer.css?v=${Date.now()}" />
     <link rel="stylesheet" type="text/css" href="guestbook.css?v=${Date.now()}" />
+    <link rel="stylesheet" type="text/css" href="scrollAnimations.css?v=${Date.now()}" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRN8Fj3yW9KHfC7m+Z7kB6gOVnFdLjwQ6ez+xNREgKlfS6S5Yb+nlBldvtdo7FvY3LZy+ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body style="background:linear-gradient(135deg, #0f0c29, #302b63);">
@@ -73,7 +74,7 @@
     </section>
 
 
-    <section class="skills-section" id="skillsSection">
+    <section class="skills-section fade-in-section" id="skillsSection">
     <h2 class="section-title">Technical Expertise</h2>
     
     <!-- This div will be filled by our C# code -->
@@ -83,7 +84,7 @@
 </section>
 
     <!-- Projects Section -->
-<section class="projects-carousel" id="projectsCarousal">
+<section class="projects-carousel fade-in-section" id="projectsCarousal">
     <div class="project-section-header">Project Showcase:</div>
     <div class="filter-controls">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -108,7 +109,7 @@
 <!-- =================================================================== -->
 <!-- ============== CONTACT FORM SECTION (UPDATED) =================== -->
 <!-- =================================================================== -->
-<section id="contact" class="section contact">
+<section id="contact" class="section contact fade-in-section">
     <div class="section-header">
         <h2 class="section-title">Let's Collaborate</h2>
         <p class="section-subtitle">Response within 24 business hours</p>
@@ -158,7 +159,7 @@
 <!-- =================================================================== -->
 <!-- ============== GUESTBOOK SECTION (UPDATED) ====================== -->
 <!-- =================================================================== -->
-<section id="guestbook" class="guestbook-section">
+<section id="guestbook" class="guestbook-section fade-in-section">
     <div class="guestbook-header">
         <h2 class="section-header">Guestbook</h2>
         <p class="section-subtitle">Leave a short message!</p>
@@ -242,5 +243,6 @@
     <script src="mainContent.js?v=${Date.now()}"></script>
     
     <script src="project.js?v=${Date.now()}"></script>
+    <script src="animations.js"></script> 
     </body>
 </html>

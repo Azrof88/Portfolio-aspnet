@@ -78,11 +78,13 @@
     <Content Include="Global.asax" />
     <Content Include="Project\Admin.aspx" />
     <Content Include="Project\admin.css" />
+    <Content Include="Project\animations.js" />
     <Content Include="Project\Azrof.jpg" />
     <Content Include="Project\HomePage.aspx" />
     <Content Include="Project\mainContent.css" />
     <Content Include="Project\project.css" />
     <Content Include="Project\script.js" />
+    <Content Include="Project\scrollAnimations.css" />
     <Content Include="Project\skills.css" />
     <Content Include="Project\sliderMenu.css" />
     <Content Include="Web.config" />

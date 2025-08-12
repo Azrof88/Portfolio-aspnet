@@ -1,0 +1,17 @@
+﻿/* --- Scroll Animation Styles --- */
+
+/* This is the initial, hidden state of the sections */
+.fade-in-section {
+    opacity: 0;
+    /* Start the section 30px lower than its final position */
+    transform: translateY(30px);
+    /* Define the transition for a smooth animation */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+    /* This is the final, visible state after the class is added by JavaScript */
+    .fade-in-section.visible {
+        opacity: 1;
+        /* Move the section back to its original position */
+        transform: translateY(0);
+    }
