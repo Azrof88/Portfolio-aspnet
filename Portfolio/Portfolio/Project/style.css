@@ -79,8 +79,12 @@ section {
     }
 
 .hero-img {
-    border-radius: 15px;
+    width: 350px; /* Set a fixed width */
+    height: 350px; /* Set a matching height */
+    border-radius: 50%; /* This is the magic part that makes it a circle */
+    object-fit: cover; /* Prevents the image from being stretched */
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 5px solid #7b2cbf; /* Optional: Adds a purple border */
 }
 
 

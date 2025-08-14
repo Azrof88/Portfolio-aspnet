@@ -83,11 +83,13 @@
     <Content Include="Project\EditProject.aspx" />
     <Content Include="Project\HomePage.aspx" />
     <Content Include="Project\mainContent.css" />
+    <None Include="Project\Portfolio.Master" />
     <Content Include="Project\project.css" />
     <Content Include="Project\script.js" />
     <Content Include="Project\scrollAnimations.css" />
     <Content Include="Project\skills.css" />
     <Content Include="Project\sliderMenu.css" />
+    <Content Include="Project\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +130,13 @@
     </Compile>
     <Compile Include="Project\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\Portfolio.Master.cs">
+      <DependentUpon>Portfolio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\Portfolio.Master.designer.cs">
+      <DependentUpon>Portfolio.Master</DependentUpon>
     </Compile>
     <Compile Include="Project\Project.cs" />
     <Compile Include="Project\Skill.cs" />

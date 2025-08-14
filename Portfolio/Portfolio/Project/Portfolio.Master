@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Project/Portfolio.Master.cs" Inherits="Portfolio.Project.PortfolioMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>H.M. Azrof | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Bootstrap CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Your New Custom Stylesheet (we will create this next) -->
+    <link href="style.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <!-- ======================= NAVIGATION BAR ======================= -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">H.M. AZROF</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ======================= MAIN CONTENT AREA ======================= -->
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <!-- The content from your HomePage.aspx will be injected here -->
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- ======================= FOOTER ======================= -->
+        <footer class="footer text-center py-4">
+            <div class="container">
+                <div class="social-icons mb-2">
+                    <a href="https://github.com/Azrof88" class="social-icon" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/h-m-azrof-468839253/" class="social-icon" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <p class="mb-0 small">&copy; <%= DateTime.Now.Year %> H.M. Azrof. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS Bundle from CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </form>
+</body>
+</html>
+

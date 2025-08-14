@@ -15,49 +15,22 @@ namespace Portfolio.Project
     {
 
         /// <summary>
-        /// form2 control.
+        /// litSkills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.WebControls.Literal litSkills;
 
         /// <summary>
-        /// sliderContainer control.
+        /// litProjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sliderContainer;
-
-        /// <summary>
-        /// dotsContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dotsContainer;
-
-        /// <summary>
-        /// skillsGrid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl skillsGrid;
-
-        /// <summary>
-        /// carouselTrack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl carouselTrack;
+        protected global::System.Web.UI.WebControls.Literal litProjects;
 
         /// <summary>
         /// Name control.
@@ -78,24 +51,6 @@ namespace Portfolio.Project
         protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// Phone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Phone;
-
-        /// <summary>
-        /// Subject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Subject;
-
-        /// <summary>
         /// Message control.
         /// </summary>
         /// <remarks>
@@ -103,15 +58,6 @@ namespace Portfolio.Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Message;
-
-        /// <summary>
-        /// Website control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Website;
 
         /// <summary>
         /// SubmitBtn control.
