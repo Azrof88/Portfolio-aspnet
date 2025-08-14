@@ -51,11 +51,11 @@ D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\roslyn\vbc.rsp
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\roslyn\VBCSCompiler.exe
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\roslyn\VBCSCompiler.exe.config
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Newtonsoft.Json.dll
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Newtonsoft.Json.xml
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.AssemblyReference.cache
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.CoreCompileInputs.cache
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.Up2Date
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.dll
 D:\Project\Portfolio-aspnet\Portfolio\Portfolio\obj\Debug\Portfolio.pdb
-D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Newtonsoft.Json.dll
-D:\Project\Portfolio-aspnet\Portfolio\Portfolio\bin\Newtonsoft.Json.xml

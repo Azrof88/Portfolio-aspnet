@@ -1,0 +1,20 @@
+﻿/* Custom styles for the admin panel layout */
+body {
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Style the GridView to match Bootstrap tables */
+.table {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.btn-cancel {
+    margin-left: 10px;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+    .btn-cancel:hover {
+        text-decoration: underline;
+    }
