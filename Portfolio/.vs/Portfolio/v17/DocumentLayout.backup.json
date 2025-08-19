@@ -3,8 +3,15 @@
   "WorkspaceRootPath": "D:\\Project\\Portfolio-aspnet\\Portfolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|d:\\project\\portfolio-aspnet\\portfolio\\portfolio\\project\\homepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|D:\\Project\\Portfolio-aspnet\\Portfolio\\portfolio\\project\\homepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|solutionrelative:portfolio\\project\\homepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|d:\\project\\portfolio-aspnet\\portfolio\\portfolio\\project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|solutionrelative:portfolio\\project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/PortfolioDB/True/SqlTable/dbo.Projects.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|D:\\Project\\Portfolio-aspnet\\Portfolio\\portfolio\\project\\admin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -33,10 +40,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|D:\\Project\\Portfolio-aspnet\\Portfolio\\portfolio\\project\\homepage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|solutionrelative:portfolio\\project\\homepage.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|D:\\Project\\Portfolio-aspnet\\Portfolio\\portfolio\\project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|solutionrelative:portfolio\\project\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6CC30BE-3692-47D7-B85B-6E1053D80696}|Portfolio\\Portfolio.csproj|D:\\Project\\Portfolio-aspnet\\Portfolio\\portfolio\\project\\addproject.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -82,16 +85,12 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Portfolio.Master",
-              "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Portfolio.Master",
-              "RelativeDocumentMoniker": "Portfolio\\Project\\Portfolio.Master",
-              "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Portfolio.Master",
-              "RelativeToolTip": "Portfolio\\Project\\Portfolio.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-08-14T05:54:50.465Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "dbo.Projects.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/PortfolioDB/True/SqlTable/dbo.Projects.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/PortfolioDB/True/SqlTable/dbo.Projects.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-08-14T07:30:26.67Z"
             },
             {
               "$type": "Document",
@@ -108,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Admin.Master",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Admin.Master",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Admin.Master",
@@ -116,12 +115,11 @@
               "RelativeToolTip": "Portfolio\\Project\\Admin.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-08-12T10:37:24.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T10:37:24.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Admin.Master.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Admin.Master.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Admin.Master.cs",
@@ -129,12 +127,11 @@
               "RelativeToolTip": "Portfolio\\Project\\Admin.Master.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T10:39:04.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T10:39:04.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Portfolio.Master.designer.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Portfolio.Master.designer.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Portfolio.Master.designer.cs",
@@ -142,12 +139,37 @@
               "RelativeToolTip": "Portfolio\\Project\\Portfolio.Master.designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T06:15:36.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T06:15:36.781Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\style.css",
+              "RelativeDocumentMoniker": "Portfolio\\Project\\style.css",
+              "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\style.css",
+              "RelativeToolTip": "Portfolio\\Project\\style.css",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-14T06:03:20.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Portfolio.Master",
+              "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Portfolio.Master",
+              "RelativeDocumentMoniker": "Portfolio\\Project\\Portfolio.Master",
+              "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Portfolio.Master",
+              "RelativeToolTip": "Portfolio\\Project\\Portfolio.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-08-14T05:54:50.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Admin.aspx",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Admin.aspx",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Admin.aspx",
@@ -155,12 +177,11 @@
               "RelativeToolTip": "Portfolio\\Project\\Admin.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-08-12T10:12:53.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T10:12:53.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Portfolio.Master.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Portfolio.Master.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Portfolio.Master.cs",
@@ -168,12 +189,11 @@
               "RelativeToolTip": "Portfolio\\Project\\Portfolio.Master.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T06:43:42.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T06:43:42.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "HomePage.aspx.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\HomePage.aspx.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\HomePage.aspx.cs",
@@ -185,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Admin.aspx.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Admin.aspx.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Admin.aspx.cs",
@@ -197,19 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\style.css",
-              "RelativeDocumentMoniker": "Portfolio\\Project\\style.css",
-              "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\style.css",
-              "RelativeToolTip": "Portfolio\\Project\\style.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-14T06:03:20.643Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "EditProject.aspx.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\EditProject.aspx.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\EditProject.aspx.cs",
@@ -221,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AddProject.aspx.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\AddProject.aspx.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\AddProject.aspx.cs",
@@ -233,19 +241,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AddProject.aspx",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\AddProject.aspx",
               "RelativeDocumentMoniker": "Portfolio\\Project\\AddProject.aspx",
               "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\AddProject.aspx",
               "RelativeToolTip": "Portfolio\\Project\\AddProject.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-08-14T02:46:14.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "EditProject.aspx.designer.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\EditProject.aspx.designer.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\EditProject.aspx.designer.cs",
@@ -257,19 +264,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "EditProject.aspx",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\EditProject.aspx",
               "RelativeDocumentMoniker": "Portfolio\\Project\\EditProject.aspx",
               "ToolTip": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\EditProject.aspx",
               "RelativeToolTip": "Portfolio\\Project\\EditProject.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-08-14T02:26:29.601Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Web.config",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Web.config",
               "RelativeDocumentMoniker": "Portfolio\\Web.config",
@@ -282,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Project.cs",
               "DocumentMoniker": "D:\\Project\\Portfolio-aspnet\\Portfolio\\Portfolio\\Project\\Project.cs",
               "RelativeDocumentMoniker": "Portfolio\\Project\\Project.cs",
