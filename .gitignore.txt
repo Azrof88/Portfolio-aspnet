@@ -1,3 +1,4 @@
+
 # Visual Studio Code files
 .vscode/*
 !.vscode/settings.json
@@ -38,3 +39,17 @@ bld/
 # Other
 *.db
 *.cache
+
+# Visual Studio user-specific files
+.vs/
+*.suo
+*.user
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+
+# Local database files
+*.mdf
+*.ldf
+
