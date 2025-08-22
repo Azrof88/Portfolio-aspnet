@@ -1,248 +1,87 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" CodeFile="~/Project/HomePage.aspx.cs" Inherits="Portfolio.Project.HomePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="Portfolio.Project.HomePage" MasterPageFile="~/Project/Portfolio.Master" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>H.M. Azrof | Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="sliderMenu.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="mainContent.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="skills.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="project.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="contacts.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="footer.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="guestbook.css?v=${Date.now()}" />
-    <link rel="stylesheet" type="text/css" href="scrollAnimations.css?v=${Date.now()}" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body style="background:linear-gradient(135deg, #0f0c29, #302b63);">
-    <form id="form2" runat="server">
-
-    <!-- Toggle Button -->
-    <!-- CORRECTED VERSION -->
-<button class="menu-toggle" onclick="toggleMenu(event)">&#x2630;</button >
-
-    <!-- Slider Menu Container -->
-    <div class="slider-menu" id="sliderMenu">
-        <!-- Profile Section -->
-        <div class="menu-header">
-            <img src="Azrof.jpg" alt="User Profile" class="profile-image"/>
-            <h2 class="profile-name">H.M. Azrof</h2>
-
-        </div>
-        <!-- Menu Items -->
-        <div class="menu-items">
-            <a href="#form1">Home</a>
-            <a href="#skillsSection">Skills</a>
-            <a href="#projectsCarousal">Project</a>
-            <a href="#contact">Contacts</a>
-        </div>
-        <!-- Close Button-->
-        <button class="close-btn" onclick="toggleMenu()">×</button>
-    </div>
-
-    <section id="form1" >
-        <div class="hero-container">
-            <!-- Image Slider -->
-            <div class="slider-container" id="sliderContainer" runat="server">
-                <!-- Slides will be dynamically injected here -->
-            </div>
-            
-            <!-- Content Overlay -->
-            <div class="content-overlay">
-                <div class="content">
-                    <h1>Hi, I'm <span class="highlight">H.M. Azrof</span></h1>
-                    <h2>Aspiring Full-Stack Developer</h2>
-                    <p>I love building modern web applications using HTML, CSS, JavaScript & ASP.NET.</p>
-                    <div class="mainContentButtons">
-                        <a href="#contact" class="btn">Contacts Me</a>
-                    </div>
+    <!-- ======================= HERO SECTION ======================= -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Hi, I'm <span class="text-primary">H.M. Azrof</span></h1>
+                    <p class="lead my-4">An aspiring Full-Stack Developer specializing in building robust and scalable web applications with ASP.NET and modern frontend technologies.</p>
+                    <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="Azrof.jpg" alt="H.M. Azrof" class="img-fluid hero-img rounded-circle" />
                 </div>
             </div>
-
-            <!-- Slider Controls -->
-<div class="slider-controls">
-    <button class="prev-btn" type="button">❮</button>
-    <div class="dots-container" id="dotsContainer" runat="server"></div>
-    <button class="next-btn" type="button">❯</button>
-</div>
         </div>
     </section>
 
-
-    <section class="skills-section fade-in-section" id="skillsSection">
-    <h2 class="section-title">Technical Expertise</h2>
-    
-    <!-- This div will be filled by our C# code -->
-    <div class="skills-grid" id="skillsGrid" runat="server">
-        <!-- SKILL CARDS WILL BE DYNAMICALLY INSERTED HERE -->
-    </div>
-</section>
-
-    <!-- Projects Section -->
-<section class="projects-carousel fade-in-section" id="projectsCarousal">
-    <div class="project-section-header">Project Showcase:</div>
-    <div class="filter-controls">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="android">Android</button>
-        <button class="filter-btn" data-filter="web">Web</button>
-        <button class="filter-btn" data-filter="database">Database</button>
-    </div>
-
-    <div class="carousel-container">
-        <!-- UPDATE THIS LINE -->
-    <div class="carousel-track" id="carouselTrack" runat="server">
-        <!-- This area should be empty. C# will add the project cards here. -->
-    </div>
-    </div>
-
-    <div class="carousel-nav">
-    <button class="nav-btn prev-btn" type="button">&lt;</button>
-    <button class="nav-btn next-btn" type="button">&gt;</button>
-</div>
-</section>
-
-<!-- =================================================================== -->
-<!-- ============== CONTACT FORM SECTION (UPDATED) =================== -->
-<!-- =================================================================== -->
-<section id="contact" class="section contact fade-in-section">
-    <div class="section-header">
-        <h2 class="section-title">Let's Collaborate</h2>
-        <p class="section-subtitle">Response within 24 business hours</p>
-    </div>
-    <div class="contact-container">
-        <div class="contact-form">
-            <div class="form-group">
-                <!-- ADDED ValidationGroup="Contact" -->
-                <asp:TextBox ID="Name" runat="server" CssClass="floating-input" placeholder=" " ValidationGroup="Contact" />
-                <label class="floating-label"><i class="fas fa-user-tag"></i> Full Name</label>
-            </div>
-            <div class="form-group">
-                <!-- ADDED ValidationGroup="Contact" -->
-                <asp:TextBox ID="Email" runat="server" CssClass="floating-input" TextMode="Email" placeholder=" " ValidationGroup="Contact" />
-                <label class="floating-label"><i class="fas fa-at"></i> Professional Email</label>
-            </div>
-            <div class="form-group">
-                <asp:TextBox ID="Phone" runat="server" CssClass="floating-input" TextMode="Phone" placeholder=" " />
-                <label class="floating-label"><i class="fas fa-mobile-alt"></i> Contact Number (Optional)</label>
-            </div>
-            <div class="form-group">
-                <!-- ADDED ValidationGroup="Contact" -->
-                <asp:DropDownList ID="Subject" runat="server" CssClass="floating-select" ValidationGroup="Contact">
-                    <asp:ListItem Text="" Value="" />
-                    <asp:ListItem Text="Technical Consulting" Value="consulting" />
-                    <asp:ListItem Text="Project Collaboration" Value="collaboration" />
-                    <asp:ListItem Text="Career Opportunity" Value="opportunity" />
-                    <asp:ListItem Text="Other Inquiry" Value="other" />
-                </asp:DropDownList>
-                <label class="floating-label"><i class="fas fa-comment-dots"></i> Inquiry Type</label>
-            </div>
-            <div class="form-group">
-                <!-- ADDED ValidationGroup="Contact" -->
-                <asp:TextBox ID="Message" runat="server" CssClass="floating-textarea" TextMode="MultiLine" Rows="5" placeholder=" " ValidationGroup="Contact" />
-                <label class="floating-label"><i class="fas fa-envelope-open-text"></i> Detailed Message</label>
-            </div>
-            <asp:TextBox ID="Website" runat="server" CssClass="hp-field" placeholder="Leave this blank" />
-            <div class="form-actions">
-                <!-- ADDED ValidationGroup="Contact" -->
-                <asp:Button ID="SubmitBtn" runat="server" Text="Send Message" CssClass="submit-btn" OnClick="SubmitBtn_Click" ValidationGroup="Contact" />
-                <asp:Label ID="StatusLabel" runat="server" CssClass="form-status" />
+    <!-- ======================= SKILLS SECTION ======================= -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <p class="section-subtitle">My proficiency in various technologies</p>
+            <div class="row g-4">
+                <!-- The C# code will populate this literal control with skill cards -->
+                <asp:Literal ID="litSkills" runat="server"></asp:Literal>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- =================================================================== -->
-<!-- ============== GUESTBOOK SECTION (UPDATED) ====================== -->
-<!-- =================================================================== -->
-<section id="guestbook" class="guestbook-section fade-in-section">
-    <div class="guestbook-header">
-        <h2 class="section-header">Guestbook</h2>
-        <p class="section-subtitle">Leave a short message!</p>
-    </div>
+    <!-- ======================= PROJECTS SECTION ======================= -->
+    <section id="projects" class="bg-light bg-opacity-10">
+        <div class="container">
+            <h2 class="section-title">Project Showcase</h2>
+            <p class="section-subtitle">A selection of my recent work</p>
+            <div class="row g-4">
+                <!-- C# code will populate this literal control with project cards -->
+                <asp:Literal ID="litProjects" runat="server"></asp:Literal>
+            </div>
+        </div>
+    </section>
 
-    <!-- This new container will create the side-by-side layout -->
-    <div class="guestbook-content-wrapper">
-
-        <!-- Column 1: The Form -->
-        <div class="comment-form-container">
-            <div class="comment-form">
-                <div class="form-group">
-                    <asp:TextBox ID="txtGuestName" runat="server" placeholder="Your Name" CssClass="guest-input" ValidationGroup="Guestbook"></asp:TextBox>
+    <!-- ======================= CONTACT & GUESTBOOK ======================= -->
+    <section id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <!-- CONTACT FORM -->
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">Let's Collaborate</h2>
+                    <div class="form-group mb-3">
+                        <asp:Label runat="server" Text="Full Name" CssClass="form-label"></asp:Label>
+                        <asp:TextBox ID="Name" runat="server" CssClass="form-control" ValidationGroup="Contact"></asp:TextBox>
+                    </div>
+                    <div class="form-group mb-3">
+                        <asp:Label runat="server" Text="Professional Email" CssClass="form-label"></asp:Label>
+                        <asp:TextBox ID="Email" runat="server" CssClass="form-control" TextMode="Email" ValidationGroup="Contact"></asp:TextBox>
+                    </div>
+                    <div class="form-group mb-3">
+                        <asp:Label runat="server" Text="Message" CssClass="form-label"></asp:Label>
+                        <asp:TextBox ID="Message" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5" ValidationGroup="Contact"></asp:TextBox>
+                    </div>
+                    <asp:Button ID="SubmitBtn" runat="server" Text="Send Message" CssClass="btn btn-primary" OnClick="SubmitBtn_Click" ValidationGroup="Contact" />
+                    <asp:Label ID="StatusLabel" runat="server" CssClass="d-block mt-3"></asp:Label>
                 </div>
-                <div class="form-group">
-                    <asp:TextBox ID="txtGuestMessage" runat="server" placeholder="Your message..." TextMode="MultiLine" Rows="5" CssClass="guest-textarea" ValidationGroup="Guestbook"></asp:TextBox>
+                <!-- GUESTBOOK -->
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">Guestbook</h2>
+                    <div class="form-group mb-3">
+                        <asp:TextBox ID="txtGuestName" runat="server" placeholder="Your Name" CssClass="form-control" ValidationGroup="Guestbook"></asp:TextBox>
+                    </div>
+                    <div class="form-group mb-3">
+                        <asp:TextBox ID="txtGuestMessage" runat="server" placeholder="Your message..." CssClass="form-control" TextMode="MultiLine" Rows="3" ValidationGroup="Guestbook"></asp:TextBox>
+                    </div>
+                    <asp:Button ID="btnSubmitComment" runat="server" Text="Sign Guestbook" OnClick="btnSubmitComment_Click" CssClass="btn btn-secondary" ValidationGroup="Guestbook" />
+                    <asp:Label ID="lblCommentStatus" runat="server" CssClass="d-block mt-3"></asp:Label>
+                    <hr class="my-4" />
+                    <div class="comments-display" style="height: 200px; overflow-y: auto;">
+                        <asp:Literal ID="litComments" runat="server"></asp:Literal>
+                    </div>
                 </div>
-                <asp:Button ID="btnSubmitComment" runat="server" Text="Sign Guestbook" OnClick="btnSubmitComment_Click" CssClass="guest-btn" ValidationGroup="Guestbook" />
-                <asp:Label ID="lblCommentStatus" runat="server" CssClass="comment-status"></asp:Label>
             </div>
         </div>
+    </section>
 
-        <!-- Column 2: The Comments Display -->
-        <div class="comments-display-container">
-            <div class="comments-display">
-                <asp:Literal ID="litComments" runat="server"></asp:Literal>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-       <footer class="site-footer">
-  <!-- Main Footer Container -->
-  <div class="footer-container">
-    <!-- Left-aligned Section -->
-    <div class="footer-section left-section">
-      <h4>Connect with Me</h4>
-      <div class="social-icons">
-        <a href="https://github.com/Azrof88" aria-label="GitHub" target="_blank" rel="noopener">
-          <img src="github.jpg" alt="GitHub" class="social-icon" />
-        </a>
-        <a href="https://www.linkedin.com/in/h-m-azrof-468839253/" aria-label="LinkedIn" target="_blank" rel="noopener">
-          <img src="linkdin.jpg" alt="LinkedIn" class="social-icon" />
-        </a>
-      </div>
-    </div>
-
-    <!-- Right-aligned Section -->
-    <div class="footer-section right-section">
-      <h4>Contact</h4>
-      <p class="email-link">
-        <a href="mailto:hmazrof@gmail.com">
-          <span class="icon">✉️</span>
-          hmazrof@gmail.com
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <!-- Full-width Copyright Section -->
-  <div class="footer-copyright">
-    <p>© 2025 H.M. Azrof. All rights reserved.</p>
-  </div>
-</footer>
-
-
-
-    </form>
-
-
-
-
-
-
-
-
-
-    <script src="sliderMenu.js?v=${Date.now()}"></script>
-    <script src="mainContent.js?v=${Date.now()}"></script>
-    
-    <script src="project.js?v=${Date.now()}"></script>
-    <script src="animations.js"></script> 
-    </body>
-</html>
+</asp:Content>
