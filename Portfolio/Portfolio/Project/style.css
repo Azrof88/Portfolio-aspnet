@@ -211,3 +211,40 @@ section {
     .social-icon:hover {
         color: #7b2cbf; /* Accent purple */
     }
+
+/* =================================== */
+/* =========== TESTIMONIALS ========== */
+/* =================================== */
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.03); /* Even more subtle background */
+}
+
+    .testimonial-card .card-text {
+        font-size: 1.1rem;
+        color: #e9ecef;
+    }
+
+.testimonial-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* =================================== */
+/* =========== ABOUT ME SECTION ========== */
+/* =================================== */
+#about {
+    background-color: #1a1a3a; /* A slightly different dark color */
+}
+
+.about-me-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid #7b2cbf; /* Accent purple border */
+}
+
+.about-me-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}

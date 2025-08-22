@@ -9,73 +9,84 @@ namespace Portfolio.Project
 {
     public partial class Admin : System.Web.UI.Page
     {
-        protected void gvProjects_RowEditing(object sender, GridViewEditEventArgs e)
+        // Handles the "Add New Blog Post" button click
+        protected void btnAddNewPost_Click(object sender, EventArgs e)
         {
-            // Get the ID of the project to edit from the GridView row.
-            string projectId = gvProjects.DataKeys[e.NewEditIndex].Value.ToString();
-
-            // Redirect the user to the EditProject page, passing the ID in the URL.
-            Response.Redirect("EditProject.aspx?id=" + projectId);
+            Response.Redirect("AddPost.aspx");
         }
-        protected void btnAddNewProject_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddProject.aspx");
-        }
-        protected void gvProjects_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            // 1. Get the ID of the project to delete from the GridView row.
-            int projectId = Convert.ToInt32(gvProjects.DataKeys[e.RowIndex].Value);
 
-            // 2. Set up the connection and the DELETE command.
+        // Handles the "Edit" link click in the blog grid
+        protected void gvBlogPosts_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            string postId = gvBlogPosts.DataKeys[e.NewEditIndex].Value.ToString();
+            Response.Redirect("EditPost.aspx?id=" + postId);
+        }
+
+        // Handles the "Delete" link click in the blog grid
+        protected void gvBlogPosts_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int postId = Convert.ToInt32(gvBlogPosts.DataKeys[e.RowIndex].Value);
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Use a parameterized query to prevent SQL injection attacks.
-                string query = "DELETE FROM Projects WHERE ID = @ID";
+                string query = "DELETE FROM BlogPosts WHERE PostID = @PostID";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@ID", projectId);
-                    con.Open();
-                    cmd.ExecuteNonQuery(); // Execute the command
-                }
-            }
-
-            // 3. Re-bind the data to the grid to show the updated list.
-            BindData();
-        }
-
-        protected void gvSkills_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            // 1. Get the ID of the skill to delete.
-            int skillId = Convert.ToInt32(gvSkills.DataKeys[e.RowIndex].Value);
-
-            // 2. Set up the connection and the DELETE command.
-            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                string query = "DELETE FROM Skills WHERE ID = @ID";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@ID", skillId);
+                    cmd.Parameters.AddWithValue("@PostID", postId);
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
             }
-
-            // 3. Re-bind the data to refresh the grid.
-            BindData();
+            BindData(); // Refresh the grid
+        }
+        // Handles the "Add New Testimonial" button click
+        protected void btnAddNewTestimonial_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddTestimonial.aspx");
         }
 
+        // Handles the "Edit" link click in the testimonials grid
+        protected void gvTestimonials_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            string testimonialId = gvTestimonials.DataKeys[e.NewEditIndex].Value.ToString();
+            Response.Redirect("EditTestimonial.aspx?id=" + testimonialId);
+        }
+
+        // Handles the "Delete" link click in the testimonials grid
+        protected void gvTestimonials_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int testimonialId = Convert.ToInt32(gvTestimonials.DataKeys[e.RowIndex].Value);
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Testimonials WHERE ID = @ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", testimonialId);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            BindData(); // Refresh the grid
+        }
+        // Handles the "Add New Skill" button click
+        protected void btnAddNewSkill_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddSkill.aspx");
+        }
+
+        // Handles the "Edit" link click in the skills grid
+        protected void gvSkills_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            string skillId = gvSkills.DataKeys[e.NewEditIndex].Value.ToString();
+            Response.Redirect("EditSkill.aspx?id=" + skillId);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if the user is already logged in by looking for the Session variable.
             if (Session["IsAdmin"] != null && (bool)Session["IsAdmin"] == true)
             {
-                // If they are logged in:
                 LoginPanel.Visible = false;
                 AdminContentPanel.Visible = true;
-
-                // NEW: Load and bind data to the grids, but only on the initial page load.
                 if (!IsPostBack)
                 {
                     BindData();
@@ -83,13 +94,11 @@ namespace Portfolio.Project
             }
             else
             {
-                // If they are NOT logged in:
                 LoginPanel.Visible = true;
                 AdminContentPanel.Visible = false;
             }
         }
 
-        // --- NEW METHOD TO BIND DATABASE DATA ---
         private void BindData()
         {
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
@@ -112,21 +121,40 @@ namespace Portfolio.Project
                     skillsAdapter.Fill(skillsTable);
                     gvSkills.DataSource = skillsTable;
                     gvSkills.DataBind();
+
+                    // 3. NEW: Fetch and bind Timeline Events
+                    SqlDataAdapter timelineAdapter = new SqlDataAdapter("SELECT ID, EventType, Title FROM TimelineEvents ORDER BY ID DESC", con);
+                    DataTable timelineTable = new DataTable();
+                    timelineAdapter.Fill(timelineTable);
+                    gvTimeline.DataSource = timelineTable;
+                    gvTimeline.DataBind();
+
+                    // NEW: Fetch and bind Testimonials
+                    SqlDataAdapter testimonialsAdapter = new SqlDataAdapter("SELECT ID, Quote, AuthorName FROM Testimonials", con);
+                    DataTable testimonialsTable = new DataTable();
+                    testimonialsAdapter.Fill(testimonialsTable);
+                    gvTestimonials.DataSource = testimonialsTable;
+                    gvTestimonials.DataBind();
+
+                    // NEW: Fetch and bind Blog Posts
+                    SqlDataAdapter blogAdapter = new SqlDataAdapter("SELECT PostID, Title, PublishDate FROM BlogPosts ORDER BY PublishDate DESC", con);
+                    DataTable blogTable = new DataTable();
+                    blogAdapter.Fill(blogTable);
+                    gvBlogPosts.DataSource = blogTable;
+                    gvBlogPosts.DataBind();
                 }
                 catch (Exception ex)
                 {
-                    // Handle any database errors
                     System.Diagnostics.Debug.WriteLine("Admin Data Load Error: " + ex.Message);
-                    // You could show an error message on the page here
                 }
             }
         }
 
+        // --- EVENT HANDLERS FOR BUTTON CLICKS ---
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string adminUser = "admin";
             string adminPass = "password123";
-
             if (txtUsername.Text == adminUser && txtPassword.Text == adminPass)
             {
                 Session["IsAdmin"] = true;
@@ -138,13 +166,91 @@ namespace Portfolio.Project
             }
         }
 
-        // --- NEW METHOD FOR LOGOUT BUTTON ---
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            // Clear the session and redirect to the login page
             Session.Clear();
             Session.Abandon();
             Response.Redirect("Admin.aspx");
+        }
+
+        protected void btnAddNewProject_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddProject.aspx");
+        }
+
+        // NEW: Event handler for adding a new timeline event
+        protected void btnAddNewEvent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddTimelineEvent.aspx");
+        }
+
+
+        // --- EVENT HANDLERS FOR GRIDVIEW ACTIONS ---
+        protected void gvProjects_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            string projectId = gvProjects.DataKeys[e.NewEditIndex].Value.ToString();
+            Response.Redirect("EditProject.aspx?id=" + projectId);
+        }
+
+        protected void gvProjects_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int projectId = Convert.ToInt32(gvProjects.DataKeys[e.RowIndex].Value);
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Projects WHERE ID = @ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", projectId);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            BindData();
+        }
+
+        protected void gvSkills_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int skillId = Convert.ToInt32(gvSkills.DataKeys[e.RowIndex].Value);
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Skills WHERE ID = @ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", skillId);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            BindData();
+        }
+
+        // NEW: Event handlers for the timeline GridView
+        protected void gvTimeline_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            // Get the ID of the event to edit from the GridView row.
+            string eventId = gvTimeline.DataKeys[e.NewEditIndex].Value.ToString();
+
+            // Redirect the user to the EditTimelineEvent page, passing the ID in the URL.
+            Response.Redirect("EditTimelineEvent.aspx?id=" + eventId);
+        }
+
+        protected void gvTimeline_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int eventId = Convert.ToInt32(gvTimeline.DataKeys[e.RowIndex].Value);
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM TimelineEvents WHERE ID = @ID";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@ID", eventId);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            BindData();
         }
     }
 }

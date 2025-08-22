@@ -74,27 +74,45 @@
       <DependentUpon>Portfolio.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Project\AddPost.aspx" />
     <Content Include="Project\AddProject.aspx" />
+    <Content Include="Project\AddSkill.aspx" />
+    <Content Include="Project\AddTestimonial.aspx" />
+    <Content Include="Project\AddTimelineEvent.aspx" />
     <Content Include="Project\admin-layout.css" />
     <Content Include="Project\Admin.aspx" />
     <Content Include="Project\admin.css" />
     <Content Include="Project\animations.js" />
     <Content Include="Project\Azrof.jpg" />
+    <Content Include="Project\Blog.aspx" />
     <Content Include="Project\EditProject.aspx" />
+    <Content Include="Project\EditSkill.aspx" />
+    <Content Include="Project\EditTestimonial.aspx" />
+    <Content Include="Project\EditTimelineEvent.aspx" />
     <Content Include="Project\HomePage.aspx" />
     <Content Include="Project\mainContent.css" />
     <None Include="Project\Portfolio.Master" />
+    <Content Include="Project\Post.aspx" />
     <Content Include="Project\project.css" />
     <Content Include="Project\script.js" />
     <Content Include="Project\scrollAnimations.css" />
     <Content Include="Project\skills.css" />
     <Content Include="Project\sliderMenu.css" />
     <Content Include="Project\style.css" />
+    <Content Include="Project\timeline.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Project\AboutMe.cs" />
+    <Compile Include="Project\AddPost.aspx.cs">
+      <DependentUpon>AddPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\AddPost.aspx.designer.cs">
+      <DependentUpon>AddPost.aspx</DependentUpon>
     </Compile>
     <Compile Include="Project\AddProject.aspx.cs">
       <DependentUpon>AddProject.aspx</DependentUpon>
@@ -102,6 +120,27 @@
     </Compile>
     <Compile Include="Project\AddProject.aspx.designer.cs">
       <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\AddSkill.aspx.cs">
+      <DependentUpon>AddSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\AddSkill.aspx.designer.cs">
+      <DependentUpon>AddSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\AddTestimonial.aspx.cs">
+      <DependentUpon>AddTestimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\AddTestimonial.aspx.designer.cs">
+      <DependentUpon>AddTestimonial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\AddTimelineEvent.aspx.cs">
+      <DependentUpon>AddTimelineEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\AddTimelineEvent.aspx.designer.cs">
+      <DependentUpon>AddTimelineEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Project\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
@@ -117,12 +156,40 @@
     <Compile Include="Project\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Project\Blog.aspx.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\Blog.aspx.designer.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Project\EditProject.aspx.cs">
       <DependentUpon>EditProject.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Project\EditProject.aspx.designer.cs">
       <DependentUpon>EditProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\EditSkill.aspx.cs">
+      <DependentUpon>EditSkill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\EditSkill.aspx.designer.cs">
+      <DependentUpon>EditSkill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\EditTestimonial.aspx.cs">
+      <DependentUpon>EditTestimonial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\EditTestimonial.aspx.designer.cs">
+      <DependentUpon>EditTestimonial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Project\EditTimelineEvent.aspx.cs">
+      <DependentUpon>EditTimelineEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\EditTimelineEvent.aspx.designer.cs">
+      <DependentUpon>EditTimelineEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Project\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -138,8 +205,17 @@
     <Compile Include="Project\Portfolio.Master.designer.cs">
       <DependentUpon>Portfolio.Master</DependentUpon>
     </Compile>
+    <Compile Include="Project\Post.aspx.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Project\Post.aspx.designer.cs">
+      <DependentUpon>Post.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Project\Project.cs" />
     <Compile Include="Project\Skill.cs" />
+    <Compile Include="Project\Testimonial.cs" />
+    <Compile Include="Project\TimelineEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

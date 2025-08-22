@@ -11,8 +11,6 @@ namespace Portfolio.Project
 {
     public partial class HomePage : System.Web.UI.Page
     {
-        private string guestbookFilePath;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             guestbookFilePath = Server.MapPath("~/App_Data/guestbook.txt");
@@ -22,8 +20,132 @@ namespace Portfolio.Project
                 LoadSkills();
                 LoadProjects();
                 LoadComments();
+                LoadTimeline();
+                LoadTestimonials();
+                LoadAboutMe();
             }
         }
+        // Add this new method inside your HomePage class
+        private void LoadAboutMe()
+        {
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            StringBuilder aboutMeHtml = new StringBuilder();
+            AboutMe aboutContent = new AboutMe();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // We select TOP 1 because we only ever expect one row in this table
+                string query = "SELECT TOP 1 Heading, Paragraph1, Paragraph2, ImageURL FROM AboutMe";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                aboutContent.Heading = reader["Heading"].ToString();
+                                aboutContent.Paragraph1 = reader["Paragraph1"].ToString();
+                                aboutContent.Paragraph2 = reader["Paragraph2"].ToString();
+                                aboutContent.ImageURL = reader["ImageURL"].ToString();
+                            }
+                        }
+                    }
+                    catch (Exception ex) { /* Handle error */ }
+                }
+            }
+
+            // Build the HTML for the section
+            aboutMeHtml.Append(@"<div class='row align-items-center g-5'>");
+            aboutMeHtml.Append(@"<div class='col-lg-6'><div class='about-me-text'>");
+            aboutMeHtml.AppendFormat(@"<h3 class='mb-4'>{0}</h3>", aboutContent.Heading);
+            aboutMeHtml.AppendFormat(@"<p>{0}</p>", aboutContent.Paragraph1);
+            aboutMeHtml.AppendFormat(@"<p>{0}</p>", aboutContent.Paragraph2);
+            aboutMeHtml.Append(@"</div></div>");
+            aboutMeHtml.Append(@"<div class='col-lg-6 text-center'>");
+            aboutMeHtml.AppendFormat(@"<img src='{0}' alt='About Me Photo' class='img-fluid rounded-circle about-me-img' />", ResolveUrl("~/Project/" + aboutContent.ImageURL));
+            aboutMeHtml.Append(@"</div></div>");
+
+            litAboutMe.Text = aboutMeHtml.ToString();
+        }
+        // Add this new method inside your HomePage class
+        private void LoadTestimonials()
+        {
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            StringBuilder testimonialsHtml = new StringBuilder();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Quote, AuthorName, AuthorTitle, AuthorImageURL FROM Testimonials";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Build each testimonial card inside a Bootstrap column
+                                testimonialsHtml.Append(@"<div class='col-md-6 mb-4'>");
+                                testimonialsHtml.Append(@"<div class='testimonial-card card h-100'>");
+                                testimonialsHtml.Append(@"<div class='card-body'>");
+                                testimonialsHtml.AppendFormat(@"<p class='card-text fst-italic'>""{0}""</p>", reader["Quote"]);
+                                testimonialsHtml.Append(@"<div class='d-flex align-items-center mt-4'>");
+                                testimonialsHtml.AppendFormat(@"<img src='{0}' class='testimonial-img rounded-circle me-3' alt='{1}'>", ResolveUrl("~/Project/" + reader["AuthorImageURL"].ToString()), reader["AuthorName"]);
+                                testimonialsHtml.Append(@"<div>");
+                                testimonialsHtml.AppendFormat(@"<h6 class='mb-0 text-white'>{0}</h6>", reader["AuthorName"]);
+                                testimonialsHtml.AppendFormat(@"<small class='text-muted'>{0}</small>", reader["AuthorTitle"]);
+                                testimonialsHtml.Append(@"</div></div></div></div></div>");
+                            }
+                        }
+                    }
+                    catch (Exception ex) { /* Handle error */ }
+                }
+            }
+            litTestimonials.Text = testimonialsHtml.ToString();
+        }
+        // Add this new method inside your HomePage class
+        private void LoadTimeline()
+        {
+            string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+            StringBuilder timelineHtml = new StringBuilder();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // Order by ID DESC to show the newest events first
+                string query = "SELECT EventType, Title, Institution, DateRange, Description FROM TimelineEvents ORDER BY ID DESC";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    try
+                    {
+                        con.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                timelineHtml.Append("<div class='timeline-item'>");
+                                timelineHtml.Append("<div class='timeline-dot'></div>");
+                                timelineHtml.Append("<div class='timeline-content'>");
+                                timelineHtml.AppendFormat("<h3>{0}</h3>", reader["Title"]);
+                                timelineHtml.AppendFormat("<div class='timeline-date'>{0}</div>", reader["DateRange"]);
+                                timelineHtml.AppendFormat("<p><strong>{0}</strong></p>", reader["Institution"]);
+                                timelineHtml.AppendFormat("<p>{0}</p>", reader["Description"]);
+                                timelineHtml.Append("</div></div>");
+                            }
+                        }
+                    }
+                    catch (Exception ex) { /* Handle error */ }
+                }
+            }
+            litTimeline.Text = timelineHtml.ToString();
+        }
+
+        
+        private string guestbookFilePath;
+
+        
 
         // --- DATA LOADING METHODS ---
 

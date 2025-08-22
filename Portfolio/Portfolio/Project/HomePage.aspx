@@ -18,6 +18,13 @@
         </div>
     </section>
 
+    <!-- ======================= ABOUT ME SECTION ======================= -->
+<section id="about">
+    <div class="container">
+        <asp:Literal ID="litAboutMe" runat="server"></asp:Literal>
+    </div>
+</section>
+
     <!-- ======================= SKILLS SECTION ======================= -->
     <section id="skills">
         <div class="container">
@@ -30,6 +37,17 @@
         </div>
     </section>
 
+    <!-- ======================= EXPERIENCE & EDUCATION ======================= -->
+<section id="experience" class="timeline-section">
+    <div class="container">
+        <h2 class="section-title">My Journey</h2>
+        <p class="section-subtitle">A timeline of my experience and education</p>
+        <div class="timeline-container">
+            <asp:Literal ID="litTimeline" runat="server"></asp:Literal>
+        </div>
+    </div>
+</section>
+
     <!-- ======================= PROJECTS SECTION ======================= -->
     <section id="projects" class="bg-light bg-opacity-10">
         <div class="container">
@@ -41,6 +59,17 @@
             </div>
         </div>
     </section>
+
+    <!-- ======================= TESTIMONIALS SECTION ======================= -->
+<section id="testimonials">
+    <div class="container">
+        <h2 class="section-title">Recommendations</h2>
+        <p class="section-subtitle">What others say about my work</p>
+        <div class="row">
+            <asp:Literal ID="litTestimonials" runat="server"></asp:Literal>
+        </div>
+    </div>
+</section>
 
     <!-- ======================= CONTACT & GUESTBOOK ======================= -->
     <section id="contact">

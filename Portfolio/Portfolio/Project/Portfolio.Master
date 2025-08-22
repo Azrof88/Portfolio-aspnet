@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="timeline.css" rel="stylesheet" />
 
     <!-- Your New Custom Stylesheet (we will create this next) -->
     <link href="style.css" rel="stylesheet" />
@@ -32,12 +33,24 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
+                    <!-- Inside Portfolio.Master -->
+
+<ul class="navbar-nav ms-auto">
+    <!-- This link now points to the main page -->
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx">Home</a></li>
+    
+    <!-- These links now point to the main page AND the section -->
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx#about">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx#skills">Skills</a></li>
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx#experience">My Journey</a></li>
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx#projects">Projects</a></li>
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx#testimonials">Testimonials</a></li>
+    
+    <!-- This link correctly points to the blog page -->
+    <li class="nav-item"><a class="nav-link" href="Blog.aspx">Blog</a></li>
+
+    <li class="nav-item"><a class="nav-link" href="HomePage.aspx#contact">Contact</a></li>
+</ul>
                 </div>
             </div>
         </nav>

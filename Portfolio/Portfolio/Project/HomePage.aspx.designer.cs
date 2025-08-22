@@ -15,6 +15,15 @@ namespace Portfolio.Project
     {
 
         /// <summary>
+        /// litAboutMe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAboutMe;
+
+        /// <summary>
         /// litSkills control.
         /// </summary>
         /// <remarks>
@@ -24,6 +33,15 @@ namespace Portfolio.Project
         protected global::System.Web.UI.WebControls.Literal litSkills;
 
         /// <summary>
+        /// litTimeline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTimeline;
+
+        /// <summary>
         /// litProjects control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,15 @@ namespace Portfolio.Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litProjects;
+
+        /// <summary>
+        /// litTestimonials control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litTestimonials;
 
         /// <summary>
         /// Name control.
