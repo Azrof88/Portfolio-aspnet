@@ -99,7 +99,7 @@ namespace Portfolio.Project
                                 testimonialsHtml.AppendFormat(@"<img src='{0}' class='testimonial-img rounded-circle me-3' alt='{1}'>", ResolveUrl("~/Project/" + reader["AuthorImageURL"].ToString()), reader["AuthorName"]);
                                 testimonialsHtml.Append(@"<div>");
                                 testimonialsHtml.AppendFormat(@"<h6 class='mb-0 text-white'>{0}</h6>", reader["AuthorName"]);
-                                testimonialsHtml.AppendFormat(@"<small class='text-muted'>{0}</small>", reader["AuthorTitle"]);
+                                testimonialsHtml.AppendFormat(@"<small class='author-title'>{0}</small>", reader["AuthorTitle"]);
                                 testimonialsHtml.Append(@"</div></div></div></div></div>");
                             }
                         }
@@ -202,11 +202,19 @@ namespace Portfolio.Project
                             while (reader.Read())
                             {
                                 projectsHtml.Append(@"<div class='col-md-6 col-lg-4 mb-4'>");
-                                projectsHtml.Append(@"<div class='card h-100'>");
+
+                                // MODIFICATION 1: Added the 'project-card' class to the main card div.
+                                projectsHtml.Append(@"<div class='card h-100 project-card'>");
+
                                 projectsHtml.AppendFormat(@"<img src='{0}' class='card-img-top' alt='{1}' style='height: 200px; object-fit: cover;'>", ResolveUrl("~/Project/" + reader["ImageURL"].ToString()), reader["Title"]);
                                 projectsHtml.Append(@"<div class='card-body d-flex flex-column'>");
                                 projectsHtml.AppendFormat(@"<h5 class='card-title'>{0}</h5>", reader["Title"]);
+
+                                // MODIFICATION 2: Wrapped the description in a div with the 'project-description' class.
+                                projectsHtml.Append(@"<div class='project-description'>");
                                 projectsHtml.AppendFormat(@"<p class='card-text'>{0}</p>", reader["Description"]);
+                                projectsHtml.Append(@"</div>"); // Closing the new div
+
                                 projectsHtml.AppendFormat(@"<a href='{0}' class='btn btn-outline-primary mt-auto' target='_blank'>View on GitHub</a>", reader["GitHubURL"]);
                                 projectsHtml.Append(@"</div></div></div>");
                             }

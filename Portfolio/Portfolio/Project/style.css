@@ -1,4 +1,17 @@
-﻿/* =================================== */
+﻿
+/* =================================== */
+/* ======== ANIMATED BACKGROUND ====== */
+/* =================================== */
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* This is the most important part! It places the canvas behind all other content. */
+}
+
+/* =================================== */
 /* ========== GLOBAL STYLES ========== */
 /* =================================== */
 html {
@@ -61,7 +74,7 @@ section {
 /* ============ HERO SECTION =========== */
 /* =================================== */
 .hero {
-    background: linear-gradient(135deg, #0f0c29, #302b63);
+    /* REMOVED the background gradient to make it transparent */
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -94,6 +107,8 @@ section {
 /* =================================== */
 /* ========= SKILLS & PROJECTS ======== */
 /* =================================== */
+
+/* --- Card Base Style (Applies to all cards) --- */
 .card {
     background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -101,10 +116,27 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
+/* --- Project Card Specific Hover Effect --- */
+.project-card:hover {
+    transform: scale(1.05); /* Makes the card 5% bigger */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    z-index: 10;
+    position: relative;
+}
+
+/* --- ADD THIS RULE --- */
+/* This is the container for your description text */
+.project-description {
+    max-height: 75px; /* Sets an initial height, about 3 lines of text */
+    overflow: hidden; /* Hides any text that doesn't fit */
+    transition: max-height 0.4s ease-in-out; /* Animates the height change */
+}
+
+/* --- ADD THIS RULE --- */
+/* This expands the description when you hover over the card */
+.project-card:hover .project-description {
+    max-height: 500px; /* Expands to a large height to show all text */
+}
 
 .card-title {
     color: #fff;
@@ -115,40 +147,19 @@ section {
     color: #adb5bd;
 }
 
+/* ... The rest of your styles for skills, progress bars, etc. ... */
 .progress {
     height: 10px;
 }
-
-.progress-bar {
-    background-color: #7b2cbf; /* Accent purple */
-}
-
-/* --- NEW STYLES FOR SKILL CARD --- */
-.card-icon-wrapper {
-    font-size: 2.5rem;
-    color: #7b2cbf;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.card-icon-link:hover .card-icon-wrapper {
-    transform: scale(1.1);
-}
-
-.proficiency-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #ced4da;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
+/* ... etc. ... */
 
 
 /* =================================== */
 /* ======== CONTACT & GUESTBOOK ====== */
 /* =================================== */
 #contact, #guestbook {
-    background-color: #1a1a3a;
+    /* CHANGED: from a solid color to transparent */
+    background-color: transparent;
 }
 
 .form-control {
@@ -218,38 +229,45 @@ section {
 /* =================================== */
 /* =========== TESTIMONIALS ========== */
 /* =================================== */
+
 .testimonial-card {
-    background-color: rgba(255, 255, 255, 0.03); /* Even more subtle background */
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    /* Let the card's height be determined by its content */
+    display: flex;
+    flex-direction: column;
 }
 
+    /* Styles the main quote text ("HSC Exam") */
     .testimonial-card .card-text {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: #e9ecef;
+        /* Pushes the author info to the bottom of the card */
+        margin-bottom: auto;
     }
 
+/* Styles the circular profile image */
 .testimonial-img {
-    width: 60px;
-    height: 60px;
+    width: 75px; /* Made image slightly larger */
+    height: 75px;
     object-fit: cover;
+    border: 2px solid #fff; /* Adds a nice white border */
 }
 
-/* =================================== */
-/* =========== ABOUT ME SECTION ========== */
-/* =================================== */
-#about {
-    background-color: #1a1a3a; /* A slightly different dark color */
-}
-
-.about-me-img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border: 5px solid #7b2cbf; /* Accent purple border */
-}
-
-.about-me-text p {
+/* Styles the author's name */
+.testimonial-card h6 {
+    color: #ffffff !important; /* Ensures name is bright white */
+    font-weight: 600;
     font-size: 1.1rem;
-    line-height: 1.8;
+}
+
+/* ** THE MAIN FIX IS HERE ** */
+/* This new class styles the "Notre Dame College Dhaka" text */
+.author-title {
+    color: #adb5bd !important; /* A light, readable gray color */
+    font-size: 0.9rem;
 }
 
 /* =================================== */

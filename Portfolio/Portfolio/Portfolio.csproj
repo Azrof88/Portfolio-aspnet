@@ -84,7 +84,9 @@
     <Content Include="Project\admin.css" />
     <Content Include="Project\animations.js" />
     <Content Include="Project\Azrof.jpg" />
+    <Content Include="Project\azrof2.jpg" />
     <Content Include="Project\Blog.aspx" />
+    <Content Include="Project\doc2.jpg" />
     <Content Include="Project\EditProject.aspx" />
     <Content Include="Project\EditSkill.aspx" />
     <Content Include="Project\EditTestimonial.aspx" />
