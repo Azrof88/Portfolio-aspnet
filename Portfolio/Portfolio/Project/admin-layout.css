@@ -1,20 +1,159 @@
-﻿/* Custom styles for the admin panel layout */
+﻿:root {
+    --sidebar-bg: #2c3e50; /* Dark Blue/Grey */
+    --sidebar-link-color: #ecf0f1; /* Light Grey */
+    --sidebar-link-hover: #34495e; /* Slightly Lighter Dark Blue */
+    --sidebar-link-active: #3498db; /* Bright Blue */
+    --content-bg: #e4e9f0; /* Light Steel Blue background */
+    --card-bg: #ffffff; /* White cards */
+    --text-color: #333;
+    --heading-color: #2c3e50;
+    --button-primary-bg: #3498db; /* Blue for buttons */
+    --button-primary-hover: #2980b9;
+    --sidebar-width: 260px;
+}
+
 body {
-    background-color: #f8f9fa; /* Light grey background */
+    background-color: var(--content-bg);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-color);
 }
 
-/* Style the GridView to match Bootstrap tables */
-.table {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+.page-wrapper {
+    display: flex;
 }
 
-.btn-cancel {
-    margin-left: 10px;
-    color: #6c757d;
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1020;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #455a64;
+}
+
+.sidebar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
     text-decoration: none;
 }
 
-    .btn-cancel:hover {
-        text-decoration: underline;
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--sidebar-link-color);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+    .sidebar-link:hover {
+        background-color: var(--sidebar-link-hover);
+        color: #fff;
     }
+
+    .sidebar-link.active {
+        background-color: var(--sidebar-link-hover);
+        color: #fff;
+        font-weight: 500;
+        border-left-color: var(--sidebar-link-active);
+    }
+
+/* --- Main Content & Top Navbar --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.top-navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--card-bg);
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+/* --- General UI Polish --- */
+main h2 {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    background-color: var(--card-bg);
+}
+
+.table {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+    .table thead th {
+        background-color: #f1f4f7;
+        border-bottom-width: 1px;
+        color: var(--heading-color);
+    }
+
+/* --- THEME-CONSISTENT BUTTONS --- */
+.btn-success {
+    background-color: var(--button-primary-bg) !important;
+    border-color: var(--button-primary-bg) !important;
+}
+
+    .btn-success:hover {
+        background-color: var(--button-primary-hover) !important;
+        border-color: var(--button-primary-hover) !important;
+    }
+
+/* --- Login Page Specific Styles --- */
+.login-mode .sidebar,
+.login-mode .top-navbar {
+    display: none;
+}
+
+.login-mode .main-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(calc(-1 * var(--sidebar-width)));
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #sidebar-toggle {
+        display: block;
+    }
+
+    .page-wrapper:not(.sidebar-collapsed) .sidebar {
+        transform: translateX(0);
+    }
+}

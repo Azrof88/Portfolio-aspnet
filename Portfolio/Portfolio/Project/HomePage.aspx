@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- ======================= HERO SECTION ======================= -->
-    <section id="home" class="hero">
+    <section id="home" class="hero fade-in-section">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
@@ -19,14 +19,14 @@
     </section>
 
     <!-- ======================= ABOUT ME SECTION ======================= -->
-<section id="about">
+<section id="about" class="fade-in-section">
     <div class="container">
         <asp:Literal ID="litAboutMe" runat="server"></asp:Literal>
     </div>
 </section>
 
     <!-- ======================= SKILLS SECTION ======================= -->
-    <section id="skills">
+    <section id="skills" class="fade-in-section">
         <div class="container">
             <h2 class="section-title">Technical Expertise</h2>
             <p class="section-subtitle">My proficiency in various technologies</p>
@@ -38,7 +38,7 @@
     </section>
 
     <!-- ======================= EXPERIENCE & EDUCATION ======================= -->
-<section id="experience" class="timeline-section">
+<section id="experience" class="timeline-section fade-in-section">
     <div class="container">
         <h2 class="section-title">My Journey</h2>
         <p class="section-subtitle">A timeline of my experience and education</p>
@@ -49,7 +49,7 @@
 </section>
 
     <!-- ======================= PROJECTS SECTION ======================= -->
-    <section id="projects" class="bg-light bg-opacity-10">
+    <section id="projects" class="bg-light bg-opacity-10 fade-in-section">
         <div class="container">
             <h2 class="section-title">Project Showcase</h2>
             <p class="section-subtitle">A selection of my recent work</p>
@@ -61,7 +61,7 @@
     </section>
 
     <!-- ======================= TESTIMONIALS SECTION ======================= -->
-<section id="testimonials">
+<section id="testimonials" class="fade-in-section">
     <div class="container">
         <h2 class="section-title">Recommendations</h2>
         <p class="section-subtitle">What others say about my work</p>
@@ -72,7 +72,7 @@
 </section>
 
     <!-- ======================= CONTACT & GUESTBOOK ======================= -->
-    <section id="contact">
+    <section id="contact" class="fade-in-section">
         <div class="container">
             <div class="row g-5">
                 <!-- CONTACT FORM -->

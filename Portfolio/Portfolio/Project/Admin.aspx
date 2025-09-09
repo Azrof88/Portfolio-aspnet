@@ -29,7 +29,8 @@
 
     <!-- Admin Content Panel -->
     <asp:Panel ID="AdminContentPanel" runat="server" Visible="false">
-        <h2 class="mb-4">Project Management</h2>
+        
+        <h2 id="projects" class="mb-4">Project Management</h2>
         <div class="mb-3">
             <asp:Button ID="btnAddNewProject" runat="server" Text="Add New Project" OnClick="btnAddNewProject_Click" CssClass="btn btn-success" />
         </div>
@@ -59,7 +60,7 @@
         <!-- =================================================================== -->
 <!-- ================= NEW TESTIMONIALS SECTION ================== -->
 <!-- =================================================================== -->
-<h2 class="mb-4">Testimonials Management</h2>
+<h2 id="testimonials" class="mb-4">Testimonials Management</h2>
 <div class="mb-3">
     <asp:Button ID="btnAddNewTestimonial" runat="server" Text="Add New Testimonial" OnClick="btnAddNewTestimonial_Click" CssClass="btn btn-success" />
 </div>
@@ -95,7 +96,7 @@
         <!-- =================================================================== -->
 <!-- =================== NEW BLOG MANAGEMENT SECTION ================= -->
 <!-- =================================================================== -->
-<h2 class="mb-4">Blog Management</h2>
+<h2 id="blog" class="mb-4">Blog Management</h2>
 <div class="mb-3">
     <asp:Button ID="btnAddNewPost" runat="server" Text="Add New Blog Post" OnClick="btnAddNewPost_Click" CssClass="btn btn-success" />
 </div>
@@ -124,7 +125,7 @@
 <!-- =================================================================== -->
 <!-- ================= NEW JOURNEY/TIMELINE SECTION ================== -->
 <!-- =================================================================== -->
-<h2 class="mb-4">My Journey Management</h2>
+<h2 id="journey" class="mb-4">My Journey Management</h2>
 <div class="mb-3">
     <asp:Button ID="btnAddNewEvent" runat="server" Text="Add New Journey Event" OnClick="btnAddNewEvent_Click" CssClass="btn btn-success" />
 </div>
@@ -152,7 +153,7 @@
 <!-- ======================= END OF NEW SECTION ====================== -->
 <!-- =================================================================== -->
 
-        <h2 class="mb-4">Skills Management</h2>
+       <h2 id="skills" class="mb-4">Skills Management</h2>
         <!-- ADD THIS NEW BUTTON -->
 <div class="mb-3">
     <asp:Button ID="btnAddNewSkill" runat="server" Text="Add New Skill" OnClick="btnAddNewSkill_Click" CssClass="btn btn-success" />
@@ -175,6 +176,35 @@
         </asp:TemplateField>
     </Columns>
 </asp:GridView>
+        <hr class="my-5" />
+
+<!-- =================================================================== -->
+<!-- ===================== RECEIVED MESSAGES SECTION =================== -->
+<!-- =================================================================== -->
+<h2 id="messages" class="mb-4">Received Messages</h2>
+<div class="card">
+    <div class="card-body">
+        <asp:GridView 
+            ID="gvMessages" 
+            runat="server" 
+            AutoGenerateColumns="False" 
+            CssClass="table table-hover align-middle mb-0"
+            DataKeyNames="Id">
+            <Columns>
+                <asp:BoundField DataField="Name" HeaderText="From" ItemStyle-Width="15%" />
+                <asp:BoundField DataField="Email" HeaderText="Email" ItemStyle-Width="20%" />
+                <asp:BoundField DataField="Message" HeaderText="Message" />
+                <asp:BoundField DataField="DateSent" HeaderText="Received On" DataFormatString="{0:yyyy-MM-dd HH:mm}" ItemStyle-Width="15%" />
+            </Columns>
+            <EmptyDataTemplate>
+                <div class="text-center p-4">
+                    No messages received yet.
+                </div>
+            </EmptyDataTemplate>
+        </asp:GridView>
+    </div>
+</div>
+<!-- =================================================================== -->
         </asp:Panel> <!-- <-- THIS IS THE MISSING TAG. ADD IT HERE. -->
 
 </asp:Content>

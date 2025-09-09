@@ -96,7 +96,6 @@
     <Content Include="Project\Post.aspx" />
     <Content Include="Project\project.css" />
     <Content Include="Project\script.js" />
-    <Content Include="Project\scrollAnimations.css" />
     <Content Include="Project\skills.css" />
     <Content Include="Project\sliderMenu.css" />
     <Content Include="Project\style.css" />

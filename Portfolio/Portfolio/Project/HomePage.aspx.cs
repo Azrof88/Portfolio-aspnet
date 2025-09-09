@@ -277,6 +277,7 @@ namespace Portfolio.Project
         // === THIS IS THE UPDATED METHOD ===
         protected void SubmitBtn_Click(object sender, EventArgs e)
         {
+            // Basic validation
             if (string.IsNullOrWhiteSpace(Name.Text) || string.IsNullOrWhiteSpace(Email.Text) || string.IsNullOrWhiteSpace(Message.Text))
             {
                 StatusLabel.CssClass = "d-block mt-3 text-danger";
@@ -286,20 +287,34 @@ namespace Portfolio.Project
 
             try
             {
-                // Read settings from Web.config
+                // === STEP 1: Save message to the database ===
+                string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = "INSERT INTO ContactMessages (Name, Email, Message) VALUES (@Name, @Email, @Message)";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", Name.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Email", Email.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Message", Message.Text.Trim());
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // === STEP 2: Send the email notification (your existing logic) ===
                 string fromEmail = ConfigurationManager.AppSettings["SmtpUser"];
                 string smtpPassword = ConfigurationManager.AppSettings["SmtpPass"];
                 string smtpHost = ConfigurationManager.AppSettings["SmtpHost"];
                 int smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings["SmtpPort"]);
                 string toEmail = ConfigurationManager.AppSettings["AdminEmail"];
 
-                // Create the MailMessage object
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(fromEmail);
                 mail.To.Add(toEmail);
                 mail.Subject = "New Message from your Portfolio Contact Form";
 
-                string mailBody = "You have received a new message from your portfolio contact form.<br/><br/>";
+                string mailBody = "You have received a new message.<br/><br/>";
                 mailBody += "<b>Name:</b> " + Name.Text + "<br/>";
                 mailBody += "<b>Email:</b> " + Email.Text + "<br/>";
                 mailBody += "<b>Message:</b><br/>" + Message.Text.Replace("\n", "<br/>");
@@ -307,16 +322,12 @@ namespace Portfolio.Project
                 mail.Body = mailBody;
                 mail.IsBodyHtml = true;
 
-                // Configure the SmtpClient
-                SmtpClient client = new SmtpClient(smtpHost);
-                client.Port = smtpPort;
+                SmtpClient client = new SmtpClient(smtpHost, smtpPort);
                 client.EnableSsl = true;
-                client.Credentials = new NetworkCredential(fromEmail, smtpPassword);
-
-                // Send the email
+                client.Credentials = new System.Net.NetworkCredential(fromEmail, smtpPassword);
                 client.Send(mail);
 
-                // Show success message and clear fields
+                // === STEP 3: Show success message and clear form ===
                 StatusLabel.CssClass = "d-block mt-3 text-success";
                 StatusLabel.Text = "Message sent successfully!";
                 Name.Text = "";
@@ -327,7 +338,7 @@ namespace Portfolio.Project
             {
                 StatusLabel.CssClass = "d-block mt-3 text-danger";
                 StatusLabel.Text = "Something went wrong. Please try again.";
-                System.Diagnostics.Debug.WriteLine("Email Error: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("Contact Form Error: " + ex.Message);
             }
         }
     }

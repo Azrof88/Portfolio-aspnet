@@ -96,6 +96,8 @@ namespace Portfolio.Project
             {
                 LoginPanel.Visible = true;
                 AdminContentPanel.Visible = false;
+                // ADD THIS LINE
+                (this.Master.FindControl("pageWrapper") as System.Web.UI.HtmlControls.HtmlGenericControl).Attributes["class"] += " login-mode";
             }
         }
 
@@ -142,6 +144,15 @@ namespace Portfolio.Project
                     blogAdapter.Fill(blogTable);
                     gvBlogPosts.DataSource = blogTable;
                     gvBlogPosts.DataBind();
+
+                    // Inside the BindData() method, within the try block...
+
+                    // NEW: Fetch and bind Contact Messages
+                    SqlDataAdapter messagesAdapter = new SqlDataAdapter("SELECT Id, Name, Email, Message, DateSent FROM ContactMessages ORDER BY DateSent DESC", con);
+                    DataTable messagesTable = new DataTable();
+                    messagesAdapter.Fill(messagesTable);
+                    gvMessages.DataSource = messagesTable;
+                    gvMessages.DataBind();
                 }
                 catch (Exception ex)
                 {
