@@ -92,6 +92,7 @@
     <Content Include="Project\HomePage.aspx" />
     <Content Include="Project\mainContent.css" />
     <None Include="Project\Portfolio.Master" />
+    <Content Include="Project\portfolio.jpg" />
     <Content Include="Project\Post.aspx" />
     <Content Include="Project\project.css" />
     <Content Include="Project\script.js" />

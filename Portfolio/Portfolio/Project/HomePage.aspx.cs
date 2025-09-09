@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.IO;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Web.UI;
@@ -11,6 +12,8 @@ namespace Portfolio.Project
 {
     public partial class HomePage : System.Web.UI.Page
     {
+        private string guestbookFilePath;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             guestbookFilePath = Server.MapPath("~/App_Data/guestbook.txt");
@@ -25,16 +28,18 @@ namespace Portfolio.Project
                 LoadAboutMe();
             }
         }
-        // Add this new method inside your HomePage class
+
         private void LoadAboutMe()
         {
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
             StringBuilder aboutMeHtml = new StringBuilder();
-            AboutMe aboutContent = new AboutMe();
+            // This is a simple data holder class, you would define it elsewhere in your project.
+            // public class AboutMe { public string Heading { get; set; } ... }
+            string heading = "", paragraph1 = "", paragraph2 = "", imageURL = "";
+
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // We select TOP 1 because we only ever expect one row in this table
                 string query = "SELECT TOP 1 Heading, Paragraph1, Paragraph2, ImageURL FROM AboutMe";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -45,10 +50,10 @@ namespace Portfolio.Project
                         {
                             if (reader.Read())
                             {
-                                aboutContent.Heading = reader["Heading"].ToString();
-                                aboutContent.Paragraph1 = reader["Paragraph1"].ToString();
-                                aboutContent.Paragraph2 = reader["Paragraph2"].ToString();
-                                aboutContent.ImageURL = reader["ImageURL"].ToString();
+                                heading = reader["Heading"].ToString();
+                                paragraph1 = reader["Paragraph1"].ToString();
+                                paragraph2 = reader["Paragraph2"].ToString();
+                                imageURL = reader["ImageURL"].ToString();
                             }
                         }
                     }
@@ -56,20 +61,19 @@ namespace Portfolio.Project
                 }
             }
 
-            // Build the HTML for the section
             aboutMeHtml.Append(@"<div class='row align-items-center g-5'>");
             aboutMeHtml.Append(@"<div class='col-lg-6'><div class='about-me-text'>");
-            aboutMeHtml.AppendFormat(@"<h3 class='mb-4'>{0}</h3>", aboutContent.Heading);
-            aboutMeHtml.AppendFormat(@"<p>{0}</p>", aboutContent.Paragraph1);
-            aboutMeHtml.AppendFormat(@"<p>{0}</p>", aboutContent.Paragraph2);
+            aboutMeHtml.AppendFormat(@"<h2 class='section-title text-start'>{0}</h2>", heading);
+            aboutMeHtml.AppendFormat(@"<p>{0}</p>", paragraph1);
+            aboutMeHtml.AppendFormat(@"<p>{0}</p>", paragraph2);
             aboutMeHtml.Append(@"</div></div>");
             aboutMeHtml.Append(@"<div class='col-lg-6 text-center'>");
-            aboutMeHtml.AppendFormat(@"<img src='{0}' alt='About Me Photo' class='img-fluid rounded-circle about-me-img' />", ResolveUrl("~/Project/" + aboutContent.ImageURL));
+            aboutMeHtml.AppendFormat(@"<img src='{0}' alt='About Me Photo' class='img-fluid rounded-circle about-me-img' />", ResolveUrl("~/Project/" + imageURL));
             aboutMeHtml.Append(@"</div></div>");
 
             litAboutMe.Text = aboutMeHtml.ToString();
         }
-        // Add this new method inside your HomePage class
+
         private void LoadTestimonials()
         {
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
@@ -87,7 +91,6 @@ namespace Portfolio.Project
                         {
                             while (reader.Read())
                             {
-                                // Build each testimonial card inside a Bootstrap column
                                 testimonialsHtml.Append(@"<div class='col-md-6 mb-4'>");
                                 testimonialsHtml.Append(@"<div class='testimonial-card card h-100'>");
                                 testimonialsHtml.Append(@"<div class='card-body'>");
@@ -106,7 +109,7 @@ namespace Portfolio.Project
             }
             litTestimonials.Text = testimonialsHtml.ToString();
         }
-        // Add this new method inside your HomePage class
+
         private void LoadTimeline()
         {
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
@@ -114,7 +117,6 @@ namespace Portfolio.Project
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // Order by ID DESC to show the newest events first
                 string query = "SELECT EventType, Title, Institution, DateRange, Description FROM TimelineEvents ORDER BY ID DESC";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -142,13 +144,6 @@ namespace Portfolio.Project
             litTimeline.Text = timelineHtml.ToString();
         }
 
-        
-        private string guestbookFilePath;
-
-        
-
-        // --- DATA LOADING METHODS ---
-
         private void LoadSkills()
         {
             string connectionString = ConfigurationManager.AppSettings["DbConnectionString"];
@@ -156,8 +151,7 @@ namespace Portfolio.Project
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                // UPDATED: The query now also selects the GitHubURL
-                string query = "SELECT SkillName, Description, IconClass, Proficiency, GitHubURL FROM Skills";
+                string query = "SELECT SkillName, Description, IconClass, Proficiency FROM Skills";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     try
@@ -167,22 +161,13 @@ namespace Portfolio.Project
                         {
                             while (reader.Read())
                             {
-                                // Build each skill card inside a Bootstrap column
                                 skillsHtml.Append(@"<div class='col-md-6 col-lg-4 mb-4'>");
-                                // The main card is a plain <div>
                                 skillsHtml.Append(@"<div class='card h-100 text-center p-4'>");
-
-                                // The icon is now a clickable link to GitHub
-                                skillsHtml.AppendFormat(@"<a href='{0}' target='_blank' rel='noopener' class='card-icon-link'>", reader["GitHubURL"]);
-                                skillsHtml.AppendFormat(@"<div class='card-icon-wrapper'><i class='{0}'></i></div></a>", reader["IconClass"]);
-
+                                skillsHtml.AppendFormat(@"<div class='card-icon-wrapper'><i class='{0}'></i></div>", reader["IconClass"]);
                                 skillsHtml.Append(@"<div class='card-body d-flex flex-column'>");
                                 skillsHtml.AppendFormat(@"<h5 class='card-title'>{0}</h5>", reader["SkillName"]);
                                 skillsHtml.AppendFormat(@"<p class='card-text'>{0}</p>", reader["Description"]);
-
-                                // Adds the percentage text
                                 skillsHtml.AppendFormat(@"<p class='proficiency-text'>{0}% Proficiency</p>", reader["Proficiency"]);
-
                                 skillsHtml.Append(@"<div class='progress mt-auto'><div class='progress-bar'");
                                 skillsHtml.AppendFormat(@" role='progressbar' style='width: {0}%' aria-valuenow='{0}' aria-valuemin='0' aria-valuemax='100'></div></div>", reader["Proficiency"]);
                                 skillsHtml.Append(@"</div></div></div>");
@@ -198,7 +183,6 @@ namespace Portfolio.Project
             }
             litSkills.Text = skillsHtml.ToString();
         }
-
 
         private void LoadProjects()
         {
@@ -217,7 +201,6 @@ namespace Portfolio.Project
                         {
                             while (reader.Read())
                             {
-                                // Build each project card inside a Bootstrap column
                                 projectsHtml.Append(@"<div class='col-md-6 col-lg-4 mb-4'>");
                                 projectsHtml.Append(@"<div class='card h-100'>");
                                 projectsHtml.AppendFormat(@"<img src='{0}' class='card-img-top' alt='{1}' style='height: 200px; object-fit: cover;'>", ResolveUrl("~/Project/" + reader["ImageURL"].ToString()), reader["Title"]);
@@ -268,14 +251,13 @@ namespace Portfolio.Project
             litComments.Text = commentsHtml.ToString();
         }
 
-        // --- EVENT HANDLERS ---
         protected void btnSubmitComment_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!string.IsNullOrWhiteSpace(txtGuestName.Text) && !string.IsNullOrWhiteSpace(txtGuestMessage.Text))
                 {
-                    string entry = $"{txtGuestName.Text.Trim()}|{txtGuestMessage.Text.Trim().Replace("\n", "<br>")}\n";
+                    string entry = $"{txtGuestName.Text.Trim()}|{txtGuestMessage.Text.Trim().Replace("\n", "<br>")}{Environment.NewLine}";
                     File.AppendAllText(guestbookFilePath, entry);
                     txtGuestName.Text = "";
                     txtGuestMessage.Text = "";
@@ -292,6 +274,7 @@ namespace Portfolio.Project
             }
         }
 
+        // === THIS IS THE UPDATED METHOD ===
         protected void SubmitBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Name.Text) || string.IsNullOrWhiteSpace(Email.Text) || string.IsNullOrWhiteSpace(Message.Text))
@@ -303,8 +286,37 @@ namespace Portfolio.Project
 
             try
             {
-                // NOTE: You will need to re-add your email sending logic here
-                // For now, we'll just show a success message.
+                // Read settings from Web.config
+                string fromEmail = ConfigurationManager.AppSettings["SmtpUser"];
+                string smtpPassword = ConfigurationManager.AppSettings["SmtpPass"];
+                string smtpHost = ConfigurationManager.AppSettings["SmtpHost"];
+                int smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings["SmtpPort"]);
+                string toEmail = ConfigurationManager.AppSettings["AdminEmail"];
+
+                // Create the MailMessage object
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(fromEmail);
+                mail.To.Add(toEmail);
+                mail.Subject = "New Message from your Portfolio Contact Form";
+
+                string mailBody = "You have received a new message from your portfolio contact form.<br/><br/>";
+                mailBody += "<b>Name:</b> " + Name.Text + "<br/>";
+                mailBody += "<b>Email:</b> " + Email.Text + "<br/>";
+                mailBody += "<b>Message:</b><br/>" + Message.Text.Replace("\n", "<br/>");
+
+                mail.Body = mailBody;
+                mail.IsBodyHtml = true;
+
+                // Configure the SmtpClient
+                SmtpClient client = new SmtpClient(smtpHost);
+                client.Port = smtpPort;
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(fromEmail, smtpPassword);
+
+                // Send the email
+                client.Send(mail);
+
+                // Show success message and clear fields
                 StatusLabel.CssClass = "d-block mt-3 text-success";
                 StatusLabel.Text = "Message sent successfully!";
                 Name.Text = "";
