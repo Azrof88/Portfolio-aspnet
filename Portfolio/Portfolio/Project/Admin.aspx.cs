@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -83,6 +84,19 @@ namespace Portfolio.Project
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["IsAdmin"] == null || (bool)Session["IsAdmin"] == false)
+            {
+                // ...check if they have a "Remember Me" cookie.
+                if (Request.Cookies["AdminAuth"] != null)
+                {
+                    // If the cookie has the correct value, log them in by setting the session.
+                    if (Request.Cookies["AdminAuth"]["IsAdmin"] == "true")
+                    {
+                        Session["IsAdmin"] = true;
+                    }
+                }
+            }
+
             if (Session["IsAdmin"] != null && (bool)Session["IsAdmin"] == true)
             {
                 LoginPanel.Visible = false;
@@ -169,6 +183,19 @@ namespace Portfolio.Project
             if (txtUsername.Text == adminUser && txtPassword.Text == adminPass)
             {
                 Session["IsAdmin"] = true;
+                // --- ADD THIS COOKIE LOGIC ---
+                if (chkRememberMe.Checked)
+                {
+                    // Create a new cookie
+                    HttpCookie authCookie = new HttpCookie("AdminAuth");
+                    // Add a value to it (for this example, a simple true)
+                    authCookie.Values["IsAdmin"] = "true";
+                    // Set the cookie to expire in 14 days
+                    authCookie.Expires = DateTime.Now.AddDays(14);
+                    // Add the cookie to the browser
+                    Response.Cookies.Add(authCookie);
+                }
+                // ----
                 Response.Redirect("Admin.aspx");
             }
             else

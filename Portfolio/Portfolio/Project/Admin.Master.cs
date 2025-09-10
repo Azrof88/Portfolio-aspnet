@@ -20,6 +20,13 @@ namespace Portfolio.Project
         {
             Session.Clear();
             Session.Abandon();
+            if (Request.Cookies["AdminAuth"] != null)
+            {
+                // Expire the cookie by setting its expiration date to the past
+                HttpCookie authCookie = new HttpCookie("AdminAuth");
+                authCookie.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(authCookie);
+            }
             Response.Redirect("Admin.aspx");
         }
     }

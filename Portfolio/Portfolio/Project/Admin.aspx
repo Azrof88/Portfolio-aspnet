@@ -17,6 +17,10 @@
                             <asp:Label runat="server" Text="Password" CssClass="form-label"></asp:Label>
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                         </div>
+                        <div class="mb-3 form-check">
+    <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input" />
+    <asp:Label AssociatedControlID="chkRememberMe" runat="server" Text="Remember Me" CssClass="form-check-label"></asp:Label>
+</div>
                         <div class="d-grid">
                             <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary" OnClick="btnLogin_Click" />
                         </div>
